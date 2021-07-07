@@ -68,7 +68,7 @@ class RouteServiceProvider extends ServiceProvider
     {
         Route::middleware('web')
             ->namespace($this->dashboard_namespace)
-            ->group(base_path('routes/dashboard/dashboard.php'));
+            ->group(base_path('routes/dashboard/web.php'));
     }
 
     /**
