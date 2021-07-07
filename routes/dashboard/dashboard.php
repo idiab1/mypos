@@ -4,5 +4,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('dashboard')->name('dashboard.')->group(function () {
 
-    Route::get('/check', 'DashboardController@index');
-});
+    // Home of dashboard routes
+    Route::get('/home', 'DashboardController@index')->name('dashboard');
+}); // End of dashboard routes
