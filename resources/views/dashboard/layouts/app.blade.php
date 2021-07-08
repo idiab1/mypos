@@ -17,8 +17,6 @@
         @yield('styles')
     </head>
     <body class="hold-transition sidebar-mini">
-        <!-- Site wrapper -->
-        <div class="wrapper">
             {{-- Navbar --}}
             @include('dashboard.layouts.navbar')
 
@@ -45,35 +43,27 @@
                         </div>
                     </div><!-- /.container-fluid -->
                 </section>
-
                 <!-- Main content -->
                 <section class="content">
                     <!-- Container -->
                     <div class="container-fluid">
-
                         {{-- Content --}}
                         @yield('content')
-
                     </div> <!-- End of container-fluid  -->
-
                 </section>
                 <!-- /.content -->
-
-                <!-- Footer -->
-                @include('dashboard.layouts.footer')
-
             </div>
             <!-- /.content-wrapper -->
 
-
+            <!-- Footer -->
+            @include('dashboard.layouts.footer')
 
             <!-- Control Sidebar -->
             <aside class="control-sidebar control-sidebar-dark">
                 <!-- Control sidebar content goes here -->
             </aside>
             <!-- /.control-sidebar -->
-        </div>
-            <!-- ./wrapper -->
+
 
         <!-- jQuery -->
         <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
