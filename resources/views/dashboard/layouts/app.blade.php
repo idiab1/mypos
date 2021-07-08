@@ -17,6 +17,9 @@
         @yield('styles')
     </head>
     <body class="hold-transition sidebar-mini">
+        <div class="wrapper">
+
+
             {{-- Navbar --}}
             @include('dashboard.layouts.navbar')
 
@@ -63,7 +66,7 @@
                 <!-- Control sidebar content goes here -->
             </aside>
             <!-- /.control-sidebar -->
-
+        </div>
 
         <!-- jQuery -->
         <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
