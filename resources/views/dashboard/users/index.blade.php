@@ -22,7 +22,7 @@
 
 {{-- Breadcrumb Item --}}
 @section('breadcrumb-item')
-    <li class="breadcrumb-item active"><a href="{{route('users.index')}}">Users</a></li>
+    <li class="breadcrumb-item active">Users</li>
 @endsection
 
 
@@ -91,7 +91,6 @@
                 <!-- /.card-body -->
             </div>
             <!-- /.card -->
-
         </div>
     </div>
 @endsection
@@ -120,15 +119,7 @@
             "autoWidth": false,
             "buttons": ["copy", "csv", "excel", "pdf", "print"]
         }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-        // $('#example2').DataTable({
-        //     "paging": true,
-        //     "lengthChange": false,
-        //     "searching": false,
-        //     "ordering": true,
-        //     "info": true,
-        //     "autoWidth": false,
-        //     "responsive": true,
-        // });
+
     });
 </script>
 @endsection
