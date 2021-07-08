@@ -10,6 +10,8 @@ Route::prefix('dashboard')->group(function () {
     //  Users Routes
     Route::resource('users', "UserController")->except([
         'show',
+    ])->parameters([
+        "users" => 'id'
     ])->names([
         'index'     => 'users.index',
         'create'    => 'user.create',
