@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -15,6 +16,8 @@ class UserController extends Controller
     public function index()
     {
         //
+        $users = User::all();
+        return view('dashboard.users.index', compact('users'));
     }
 
     /**
@@ -24,7 +27,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.users.create');
     }
 
     /**
@@ -38,16 +41,6 @@ class UserController extends Controller
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -80,6 +73,6 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // $user = User::where()
     }
 }
