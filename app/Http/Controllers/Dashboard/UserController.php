@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -38,7 +39,24 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
+        // Validate On Data coming fro users form
+        $request->validate([
+            'first_name'    => 'required|string|min:4',
+            'last_name'     => 'required|string|min:4',
+            'email'         => 'required|email',
+            'password'      => 'required|min:8'
+        ]);
+
+        // Create New Object from user class
+        $user = new User();
+        $user->first_name = $request->first_name;
+        $user->last_name = $request->last_name;
+        $user->email = $request->email;
+        $user->password     = Hash::make($request->password);
+        // Save data in users table
+        $user->save();
+        return redirect(route('user.create'))->with('status', 'Success! User of created');
     }
 
 
