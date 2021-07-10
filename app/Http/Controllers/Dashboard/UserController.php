@@ -68,7 +68,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+        return view('dashboard.users.edit', compact('user'));
     }
 
     /**
@@ -80,7 +81,31 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // dd($request);
+        // Validate On Data coming fro users form
+        $request->validate([
+            'first_name'    => 'required|string|min:4',
+            'last_name'     => 'required|string|min:4',
+            'email'         => 'required|email',
+            'password'      => 'required|min:8'
+        ]);
+
+        // Select user using id
+        $user = User::find($id);
+        $user->first_name = $request->first_name;
+        $user->last_name = $request->last_name;
+        $user->email = $request->email;
+        // $user->password     = Hash::make($request->password);
+        // Save data in users table
+        $user->save();
+
+        if ($request->has('password')) {
+            $user->password     = Hash::make($request->password);
+            // Save data in users table
+            $user->save();
+        }
+
+        return redirect(route('users.index'))->with('status', 'Success! User of updated data');
     }
 
     /**
@@ -91,6 +116,8 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        // $user = User::where()
+        $user = User::find($id);
+        $user->delete();
+        return redirect(route('users.index'))->with('status', 'Success! User is deleted');
     }
 }
