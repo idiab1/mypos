@@ -46,10 +46,15 @@
                         </div>
                     </div><!-- /.container-fluid -->
                 </section>
+
                 <!-- Main content -->
                 <section class="content">
                     <!-- Container -->
                     <div class="container-fluid">
+
+                        {{-- Message -> show messages like status when success, error --}}
+                        @include('dashboard.layouts.messages')
+
                         {{-- Content --}}
                         @yield('content')
                     </div> <!-- End of container-fluid  -->
