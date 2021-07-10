@@ -92,7 +92,6 @@
             </div>
             <!-- /.card -->
         </div>
-    </div>
 @endsection
 
 @section('scripts')
