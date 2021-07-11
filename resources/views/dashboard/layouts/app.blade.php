@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
         <!-- Font Awesome -->
         <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
+
         <!-- Theme style -->
         <link rel="stylesheet" href="{{asset('dashboard/css/adminlte.min.css')}}">
 
@@ -79,8 +80,12 @@
         <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
         <!-- AdminLTE App -->
         <script src="{{asset('dashboard/js/adminlte.min.js')}}"></script>
+
         <!-- AdminLTE for demo purposes -->
         <script src="{{asset('dashboard/js/demo.js')}}"></script>
+
+
+
 
         {{-- Scripts --}}
         @yield('scripts')
