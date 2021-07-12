@@ -69,8 +69,16 @@
                         <p>Dashboard</p>
                     </a>
                 </li>
+                {{-- @if (auth()->user()->hasPermission('read_users')) --}}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('users.index')}}">
+                            <i class="nav-icon fas fa-users"></i>
+                            <p>Users</p>
+                        </a>
+                    </li>
+                {{-- @endif --}}
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('users.index')}}">
+                    <a class="nav-link" href="{{route('categories.index')}}">
                         <i class="nav-icon fas fa-users"></i>
                         <p>Users</p>
                     </a>
