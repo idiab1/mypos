@@ -53,16 +53,6 @@ class CategoryController extends Controller
         // dd($request->all());
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -85,7 +75,21 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // validate on data coming from users
+        $request->validate([
+            'name' => 'required|string|max:80',
+        ]);
+
+        $category = Category::find($id);
+
+        // update data to categories table
+        $category->name = $request->name;
+
+        $category->save();
+
+        session()->flash('success', "Category of Updated");
+
+        return redirect()->route('categories.index');
     }
 
     /**
