@@ -38,7 +38,19 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // validate on data coming from users
+        $request->validate([
+            'name' => 'required|string|max:80',
+        ]);
+
+        // add data to categories table
+        Category::create($request->all());
+
+        session()->flash('success', "Category of created");
+
+        return redirect()->route('categories.index');
+
+        // dd($request->all());
     }
 
     /**
