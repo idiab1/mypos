@@ -69,20 +69,23 @@
                         <p>Dashboard</p>
                     </a>
                 </li>
-                {{-- @if (auth()->user()->hasPermission('read_users')) --}}
+                @if (auth()->user()->hasPermission('read-users'))
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('users.index')}}">
                             <i class="nav-icon fas fa-users"></i>
                             <p>Users</p>
                         </a>
                     </li>
-                {{-- @endif --}}
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('categories.index')}}">
-                        <i class="nav-icon fas fa-users"></i>
-                        <p>Categories</p>
-                    </a>
-                </li>
+                @endif
+                @if (auth()->user()->hasPermission('read-categories'))
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('categories.index')}}">
+                            <i class="nav-icon fas fa-layer-group"></i>
+                            <p>Categories</p>
+                        </a>
+                    </li>
+                @endif
+
 
             </ul>
         </nav>
