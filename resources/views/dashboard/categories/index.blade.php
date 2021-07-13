@@ -46,19 +46,20 @@
                 <table id="example1" class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Email</th>
+                            <th>#</th>
+                            <th>Name</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
+                        @php
+                            $id = 1;
+                        @endphp
                         @if ($categories->count() > 0)
-                            @foreach ($Categories as $category)
+                            @foreach ($categories as $category)
                                 <tr>
-                                    <td>{{$category->first_name}}</td>
-                                    <td>{{$category->last_name}}</td>
-                                    <td>{{$category->email}}</td>
+                                    <td>{{$id++}}</td>
+                                    <td>{{$category->name}}</td>
                                     <td>
                                         <a class="btn btn-success btn-edit" href="{{route('category.edit', ['id' => $category->id])}}">
                                             <i class="fas fa-edit"></i>
@@ -81,9 +82,8 @@
                     </tbody>
                     <tfoot>
                         <tr>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Email</th>
+                            <th>#</th>
+                            <th>Name</th>
                             <th>Action</th>
                         </tr>
                     </tfoot>
