@@ -72,7 +72,7 @@
                 @if (auth()->user()->hasPermission('read-users'))
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('users.index')}}">
-                            <i class="nav-icon fas fa-users"></i>
+                            <i class="nav-icon fas fa-users-cog"></i>
                             <p>Users</p>
                         </a>
                     </li>
@@ -82,6 +82,15 @@
                         <a class="nav-link" href="{{route('categories.index')}}">
                             <i class="nav-icon fas fa-layer-group"></i>
                             <p>Categories</p>
+                        </a>
+                    </li>
+                @endif
+
+                @if (auth()->user()->hasPermission('read-clients'))
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('clients.index')}}">
+                            <i class="nav-icon fas fa-users"></i>
+                            <p>Clients</p>
                         </a>
                     </li>
                 @endif
