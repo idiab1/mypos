@@ -37,7 +37,19 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
+        // Validate on all data
+        $request->validate([
+            'name'      => 'required|string',
+            'phone'     => 'required|array|min:1',
+            'phone.0'   => 'required',
+            'address'   => 'required',
+        ]);
+
+        Client::create($request->all());
+        session()->flash('success', 'Client of created');
+
+        return redirect()->route('clients.index');
     }
 
 
@@ -72,6 +84,9 @@ class ClientController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $client = Client::find($id);
+        $client->delete();
+        session()->flash('success', 'Client of deleted');
+        return redirect()->route('clients.index');
     }
 }
