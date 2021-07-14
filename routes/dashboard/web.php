@@ -20,6 +20,7 @@ Route::prefix('dashboard')->middleware(['auth'])->group(function () {
         'update'    => 'user.update',
         'destroy'   => 'user.destroy',
     ]);
+
     //  Categories Routes
     Route::resource('categories', "CategoryController")->except([
         'show',
@@ -32,5 +33,19 @@ Route::prefix('dashboard')->middleware(['auth'])->group(function () {
         'edit'      => 'category.edit',
         'update'    => 'category.update',
         'destroy'   => 'category.destroy',
+    ]);
+
+    //  Clients Routes
+    Route::resource('clients', "ClientsController")->except([
+        'show',
+    ])->parameters([
+        "clients" => 'id'
+    ])->names([
+        'index'     => 'clients.index',
+        'create'    => 'client.create',
+        'store'     => 'client.store',
+        'edit'      => 'client.edit',
+        'update'    => 'client.update',
+        'destroy'   => 'client.destroy',
     ]);
 }); // End of dashboard routes
