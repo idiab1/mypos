@@ -36,7 +36,7 @@ Route::prefix('dashboard')->middleware(['auth'])->group(function () {
     ]);
 
     //  Clients Routes
-    Route::resource('clients', "ClientsController")->except([
+    Route::resource('clients', "ClientController")->except([
         'show',
     ])->parameters([
         "clients" => 'id'
