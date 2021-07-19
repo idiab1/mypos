@@ -66,14 +66,14 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('dashboard.index')}}">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
-                        <p>Dashboard</p>
+                        <p>{{trans('site.dashboard')}}</p>
                     </a>
                 </li>
                 @if (auth()->user()->hasPermission('read-users'))
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('users.index')}}">
                             <i class="nav-icon fas fa-users-cog"></i>
-                            <p>Users</p>
+                            <p>{{trans('site.users')}}</p>
                         </a>
                     </li>
                 @endif
@@ -81,7 +81,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('categories.index')}}">
                             <i class="nav-icon fas fa-layer-group"></i>
-                            <p>Categories</p>
+                            <p>{{trans('site.categories')}}</p>
                         </a>
                     </li>
                 @endif
@@ -90,7 +90,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('clients.index')}}">
                             <i class="nav-icon fas fa-users"></i>
-                            <p>Clients</p>
+                            <p>{{trans('site.clients')}}</p>
                         </a>
                     </li>
                 @endif
