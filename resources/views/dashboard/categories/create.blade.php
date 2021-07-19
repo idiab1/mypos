@@ -12,7 +12,7 @@
 
 {{-- Breadcrumb Item --}}
 @section('breadcrumb-item')
-    <li class="breadcrumb-item "><a href="{{route('categories.index')}}">Categories</a></li>
+    <li class="breadcrumb-item "><a href="{{route('categories.index')}}">@lang('site.categories')</a></li>
     <li class="breadcrumb-item active">Create New Category</li>
 @endsection
 
@@ -32,15 +32,24 @@
                     <form action="{{route('category.store')}}" method="POST">
                         @csrf
                         <div class="card-body">
-                            <div class="form-group">
-                                <label for="name">Name</label>
-                                <input class="form-control" type="text" id="name" name="name" placeholder="Type name of category" required>
-                            </div>
+
+                            @foreach (config('translatable.locales') as $locale)
+                                <div class="form-group">
+                                    @if (count(config('translatable.locales')) > 1)
+                                        <label for="name">@lang('site.' . $locale . '.name')</label>
+
+                                    @else
+                                        <label for="name">@lang('site.name')</label>
+                                    @endif
+                                    <input class="form-control" type="text" id="name" name="{{ $locale }}[name]" placeholder="Type name of category" required>
+                                </div>
+
+                            @endforeach
 
                         </div>
                     <!-- /.card-body -->
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary"> <i class="fas fa-plus"></i> @lang('site.add')</button>
                     </div>
                 </form>
 
