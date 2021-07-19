@@ -11,18 +11,18 @@
 
 {{-- Title --}}
 @section('title')
-    {{__('Categories')}}
+    {{trans('site.categories')}}
 @endsection
 
 {{-- Page name --}}
 
 @section('page_name')
-    {{__('Categories')}}
+    {{trans('site.categories')}}
 @endsection
 
 {{-- Breadcrumb Item --}}
 @section('breadcrumb-item')
-    <li class="breadcrumb-item active">Categories</li>
+    <li class="breadcrumb-item active">{{trans('site.categories')}}</li>
 @endsection
 
 {{-- Content --}}
@@ -32,11 +32,11 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col-sm-8">
-                        <h3 class="card-title">List of All Categories</h3>
+                        <h3 class="card-title">{{trans('site.all_list_categories')}}</h3>
                     </div>
                     <div class="col-sm-4 float-sm-right">
                         <a class="btn btn-primary btn-add-new" href="{{route('category.create')}}">
-                            <i class="fas fa-plus"></i> Add New Category
+                            <i class="fas fa-plus"></i> {{trans('site.add_new_category')}}
                         </a>
                     </div>
                 </div>
@@ -47,8 +47,8 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Name</th>
-                            <th>Action</th>
+                            <th>{{trans('site.name')}}</th>
+                            <th>{{trans('site.action')}}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -63,14 +63,14 @@
                                     <td>
                                         <a class="btn btn-success btn-edit" href="{{route('category.edit', ['id' => $category->id])}}">
                                             <i class="fas fa-edit"></i>
-                                            Edit
+                                            {{trans('site.edit')}}
                                         </a>
                                         <form action="{{route('category.destroy', ['id' => $category->id])}}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn btn-danger btn-delete" type="submit">
                                                 <i class="fas fa-trash"></i>
-                                                Delete
+                                                {{trans('site.delete')}}
                                             </button>
                                         </form>
                                     </td>
@@ -83,8 +83,8 @@
                     <tfoot>
                         <tr>
                             <th>#</th>
-                            <th>Name</th>
-                            <th>Action</th>
+                            <th>{{trans('site.name')}}</th>
+                            <th>{{trans('site.action')}}</th>
                         </tr>
                     </tfoot>
                 </table>

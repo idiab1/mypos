@@ -15,6 +15,9 @@ return [
     // Clients
 
     // Categories
+    "all_list_categories" => 'قائمة بجميع الاقسام',
+    'add_new_category' => 'اضافة قسم جديد',
+    'create_new_category' => 'إنشاء قسم جديد',
 
 
     // Products
@@ -24,8 +27,12 @@ return [
     // Facades
 
     'home' => 'الرئيسية',
+    'name' => 'الاسم',
+    'action' => 'النشاط',
     'add' => 'أضف',
-
+    'type' => 'اكتب',
+    'edit' => 'تعديل',
+    'delete' => 'حذف',
 
     'ar' => [
         'name' => 'الاسم باللغة العربية',

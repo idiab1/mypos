@@ -2,18 +2,18 @@
 
 {{-- Title --}}
 @section('title')
-    {{__('Create New Category')}}
+    {{trans('site.create_new_category')}}
 @endsection
 
 {{-- Page name --}}
 @section('page_name')
-    {{__('Create New Category')}}
+    {{trans('site.create_new_category')}}
 @endsection
 
 {{-- Breadcrumb Item --}}
 @section('breadcrumb-item')
-    <li class="breadcrumb-item "><a href="{{route('categories.index')}}">@lang('site.categories')</a></li>
-    <li class="breadcrumb-item active">Create New Category</li>
+    <li class="breadcrumb-item "><a href="{{route('categories.index')}}">{{trans('site.categories')}}</a></li>
+    <li class="breadcrumb-item active">{{trans('site.create_new_category')}}</li>
 @endsection
 
 {{-- Content --}}
@@ -25,7 +25,7 @@
                 <div class="card card-primary">
 
                     <div class="card-header">
-                        <h3 class="card-title">Create New Category</h3>
+                        <h3 class="card-title">{{trans('site.create_new_category')}}</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
@@ -36,12 +36,12 @@
                             @foreach (config('translatable.locales') as $locale)
                                 <div class="form-group">
                                     @if (count(config('translatable.locales')) > 1)
-                                        <label for="name">@lang('site.' . $locale . '.name')</label>
+                                        <label for="name">{{ trans('site.' . $locale . '.name') }}</label>
 
                                     @else
-                                        <label for="name">@lang('site.name')</label>
+                                        <label for="name">{{ trans('site.name') }}</label>
                                     @endif
-                                    <input class="form-control" type="text" id="name" name="{{ $locale }}[name]" placeholder="Type name of category" required>
+                                    <input class="form-control" type="text" id="name" name="{{ $locale }}[name]" placeholder="{{trans('site.type')}} {{ trans('site.' . $locale . '.name') }}" required>
                                 </div>
 
                             @endforeach
@@ -49,7 +49,7 @@
                         </div>
                     <!-- /.card-body -->
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary"> <i class="fas fa-plus"></i> @lang('site.add')</button>
+                        <button type="submit" class="btn btn-primary"> <i class="fas fa-plus"></i> {{ trans('site.add') }}</button>
                     </div>
                 </form>
 
