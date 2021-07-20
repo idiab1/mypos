@@ -147,14 +147,16 @@ return [
     */
 
 
-    'attributes' => [],
+    'attributes' => [
+        'ar' => [
+            'name' => 'Arabic Name',
+        ],
 
-    'ar' => [
-        'name' => 'Arabic Name',
+        'en' => [
+            'name' => 'English Name',
+        ],
     ],
 
-    'en' => [
-        'name' => 'English Name',
-    ],
+
 
 ];
