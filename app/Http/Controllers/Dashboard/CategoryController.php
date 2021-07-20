@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Category;
+use Illuminate\Contracts\Validation\Rule;
 
 class CategoryController extends Controller
 {
@@ -38,10 +39,15 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
+        $rules = [];
+
+        foreach (config('translatable.locales') as $locale) {
+            $rules += [$locale . '.name' => ['required', 'unique:category_translations,name']];
+        }
+
         // validate on data coming from users
-        $request->validate([
-            'name' => 'required|string|max:80',
-        ]);
+        $request->validate($rules);
 
         // add data to categories table
         Category::create($request->all());
