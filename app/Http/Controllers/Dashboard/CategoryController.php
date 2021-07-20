@@ -81,17 +81,20 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        $rules = [];
+
+        foreach (config('translatable.locales') as $locale) {
+            $rules += [$locale . '.name' => ['required', 'unique:category_translations,name']];
+        }
+
         // validate on data coming from users
-        $request->validate([
-            'name' => 'required|string|max:80',
-        ]);
+        $request->validate($rules);
 
         $category = Category::find($id);
 
         // update data to categories table
-        $category->name = $request->name;
-
-        $category->save();
+        $category->update($request->all());
 
         session()->flash('success', trans('site.category_updated'));
 
