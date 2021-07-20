@@ -9,5 +9,6 @@ use Astrotomic\Translatable\Translatable;
 class Category extends Model
 {
     use Translatable;
+    protected $guarded = [];
     public $translatedAttributes = ['name'];
 }
