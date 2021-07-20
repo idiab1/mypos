@@ -18,7 +18,9 @@ return [
     "all_list_categories" => 'قائمة بجميع الاقسام',
     'add_new_category' => 'اضافة قسم جديد',
     'create_new_category' => 'إنشاء قسم جديد',
-
+    "category_created" => "تم انشاء القسم",
+    "category_updated" => "تم تحديث بيانات القسم",
+    'category_deleted' => 'تم حذف القسم',
 
     // Products
 

@@ -52,7 +52,7 @@ class CategoryController extends Controller
         // add data to categories table
         Category::create($request->all());
 
-        session()->flash('success', "Category of created");
+        session()->flash('success', trans('site.category_created'));
 
         return redirect()->route('categories.index');
 
@@ -93,7 +93,7 @@ class CategoryController extends Controller
 
         $category->save();
 
-        session()->flash('success', "Category of Updated");
+        session()->flash('success', trans('site.category_updated'));
 
         return redirect()->route('categories.index');
     }
@@ -108,6 +108,8 @@ class CategoryController extends Controller
     {
         $category = Category::find($id);
         $category->delete();
-        return redirect()->route('categories.index')->with('success', 'Category is deleted');
+        session()->flash('success', trans('site.category_deleted'));
+
+        return redirect()->route('categories.index');
     }
 }
