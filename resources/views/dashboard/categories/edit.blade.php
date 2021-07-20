@@ -58,7 +58,7 @@
 
                     <!-- /.card-body -->
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-success">Edit</button>
+                        <button type="submit" class="btn btn-primary">Edit</button>
                     </div>
                 </form>
 
