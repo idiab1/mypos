@@ -2,18 +2,18 @@
 
 {{-- Title --}}
 @section('title')
-    {{__('Edit')}} {{$category->name."'s" }}
+    {{trans('site.edit')}} {{$category->name."'s" }}
 @endsection
 
 {{-- Page name --}}
 @section('page_name')
-    {{__('Edit')}} {{$category->name."'s" }}
+    {{trans('site.edit')}} {{$category->name."'s" }}
 @endsection
 
 {{-- Breadcrumb Item --}}
 @section('breadcrumb-item')
-    <li class="breadcrumb-item "><a href="{{route('categories.index')}}">Categories</a></li>
-    <li class="breadcrumb-item active">Edit {{$category->name."'s" }}</li>
+    <li class="breadcrumb-item "><a href="{{route('categories.index')}}">{{trans('site.categories')}}</a></li>
+    <li class="breadcrumb-item active">{{trans('site.edit')}} {{$category->name."'s" }}</li>
 @endsection
 
 {{-- Content --}}
@@ -25,7 +25,7 @@
                 <div class="card card-primary">
 
                     <div class="card-header">
-                        <h3 class="card-title">Edit {{$category->name."'s" }}</h3>
+                        <h3 class="card-title">{{trans('site.edit')}} {{$category->name."'s" }}</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
@@ -58,7 +58,7 @@
 
                     <!-- /.card-body -->
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">Edit</button>
+                        <button type="submit" class="btn btn-primary">{{trans('site.edit')}}</button>
                     </div>
                 </form>
 
