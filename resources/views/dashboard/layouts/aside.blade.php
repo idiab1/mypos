@@ -77,6 +77,16 @@
                         </a>
                     </li>
                 @endif
+
+                @if (auth()->user()->hasPermission('read-clients'))
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('clients.index')}}">
+                            <i class="nav-icon fas fa-users"></i>
+                            <p>{{trans('site.clients')}}</p>
+                        </a>
+                    </li>
+                @endif
+
                 @if (auth()->user()->hasPermission('read-categories'))
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('categories.index')}}">
@@ -86,11 +96,11 @@
                     </li>
                 @endif
 
-                @if (auth()->user()->hasPermission('read-clients'))
+                @if (auth()->user()->hasPermission('read-proudcts'))
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('clients.index')}}">
-                            <i class="nav-icon fas fa-users"></i>
-                            <p>{{trans('site.clients')}}</p>
+                        <a class="nav-link" href="{{route('products.index')}}">
+                            <i class="nav-icon fas fa-layer"></i>
+                            <p>{{trans('site.products')}}</p>
                         </a>
                     </li>
                 @endif
