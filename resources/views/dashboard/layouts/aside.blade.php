@@ -96,10 +96,10 @@
                     </li>
                 @endif
 
-                @if (auth()->user()->hasPermission('read-proudcts'))
+                @if (auth()->user()->hasPermission('read-products'))
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('products.index')}}">
-                            <i class="nav-icon fas fa-layer"></i>
+                            <i class="nav-icon fas fa-clone"></i>
                             <p>{{trans('site.products')}}</p>
                         </a>
                     </li>
