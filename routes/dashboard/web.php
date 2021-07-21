@@ -28,6 +28,20 @@ Route::group(
                 'destroy'   => 'user.destroy',
             ]);
 
+            //  Clients Routes
+            Route::resource('clients', "ClientController")->except([
+                'show',
+            ])->parameters([
+                "clients" => 'id'
+            ])->names([
+                'index'     => 'clients.index',
+                'create'    => 'client.create',
+                'store'     => 'client.store',
+                'edit'      => 'client.edit',
+                'update'    => 'client.update',
+                'destroy'   => 'client.destroy',
+            ]);
+
             //  Categories Routes
             Route::resource('categories', "CategoryController")->except([
                 'show',
@@ -42,18 +56,20 @@ Route::group(
                 'destroy'   => 'category.destroy',
             ]);
 
-            //  Clients Routes
-            Route::resource('clients', "ClientController")->except([
+
+
+            //  Products Routes
+            Route::resource('products', "ProductController")->except([
                 'show',
             ])->parameters([
-                "clients" => 'id'
+                "products" => 'id'
             ])->names([
-                'index'     => 'clients.index',
-                'create'    => 'client.create',
-                'store'     => 'client.store',
-                'edit'      => 'client.edit',
-                'update'    => 'client.update',
-                'destroy'   => 'client.destroy',
+                'index'     => 'products.index',
+                'create'    => 'product.create',
+                'store'     => 'product.store',
+                'edit'      => 'product.edit',
+                'update'    => 'product.update',
+                'destroy'   => 'product.destroy',
             ]);
         }); // End of dashboard routes
 
