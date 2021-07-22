@@ -14,6 +14,7 @@
         <!-- Theme style -->
         <link rel="stylesheet" href="{{asset('dashboard/css/adminlte.min.css')}}">
 
+
         {{-- Styles --}}
         @yield('styles')
     </head>
@@ -76,23 +77,15 @@
 
         <!-- jQuery -->
         <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
+        <!-- Select 2 -->
+        <script src="{{asset('plugins/select2/js/select2.min.js')}}"></script>
         <!-- Bootstrap 4 -->
         <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
         <!-- AdminLTE App -->
         <script src="{{asset('dashboard/js/adminlte.min.js')}}"></script>
 
-        {{--ckeditor standard--}}
-        <script src="{{ asset('plugins/ckeditor/ckeditor.js') }}"></script>
-
         <!-- AdminLTE for demo purposes -->
         <script src="{{asset('dashboard/js/demo.js')}}"></script>
-
-        <script>
-            $(document).ready(function(){
-                CKEDITOR.config.language = "{{app()->getLocale()}}";
-            });
-        </script>
-
 
 
         {{-- Scripts --}}
