@@ -81,9 +81,17 @@
         <!-- AdminLTE App -->
         <script src="{{asset('dashboard/js/adminlte.min.js')}}"></script>
 
+        {{--ckeditor standard--}}
+        <script src="{{ asset('plugins/ckeditor/ckeditor.js') }}"></script>
+
         <!-- AdminLTE for demo purposes -->
         <script src="{{asset('dashboard/js/demo.js')}}"></script>
 
+        <script>
+            $(document).ready(function(){
+                CKEDITOR.config.language = "{{app()->getLocale()}}";
+            });
+        </script>
 
 
 
