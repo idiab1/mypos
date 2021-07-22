@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Category;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+// use Illuminate\Support\Facades\Image;
+use Intervention\Image\ImageManagerStatic as Image;
 use App\Product;
 
 class ProductController extends Controller
@@ -15,8 +18,9 @@ class ProductController extends Controller
      */
     public function index()
     {
+        $categories = Category::all();
         $products = Product::all();
-        return view('dashboard.products.index', compact('products'));
+        return view('dashboard.products.index', compact('products', 'categories'));
     }
 
     /**
@@ -26,7 +30,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('dashboard.products.create');
+        $categories = Category::all();
+        return view('dashboard.products.create', compact('categories'));
     }
 
     /**
@@ -37,7 +42,33 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
+        $rules = [];
+        foreach (config('translatable.locales') as $locale) {
+            $rules += [$locale . '.name' => ['required', 'unique:product_translations,name']];
+            $rules += [$locale . '.description' => ['required']];
+        }
+
+        $rules += [
+            'purchase_price' => 'required',
+            'sale_price' => 'required',
+            'stock' => 'required',
+        ];
+
+        $request->validate($rules);
+        $request_data = $request->all();
+
+        if ($request->image) {
+
+            Image::make($request->image)->resize(300, null, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save(public_path('uploads/products/' . $request->image->hashName()));
+            $request_data['image'] = $request->image->hashName();
+        }
+        // Create new product
+        Product::create($request_data);
+        session()->flash('success', trans('site.product_created'));
+        return redirect()->route('products.index');
     }
 
     /**
