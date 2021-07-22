@@ -42,12 +42,13 @@
                 </div>
             </div>
             <!-- /.card-header -->
-            <div class="card-body">
+            <div class="card-body table-responsive">
                 <table id="example1" class="table table-bordered ">
                     <thead>
                         <tr>
                             <th>#</th>
                             <th>{{trans('site.name')}}</th>
+                            <th>{{trans('site.category')}}</th>
                             <th>{{trans('site.description')}}</th>
                             <th>{{trans('site.image')}}</th>
                             <th>{{trans('site.purchase_price')}}</th>
@@ -60,11 +61,17 @@
                         @php
                             $id = 1;
                         @endphp
-                        {{-- @if ($products->count() > 0)
+                        @if ($products->count() > 0)
                             @foreach ($products as $product)
                                 <tr>
                                     <td>{{$id++}}</td>
                                     <td>{{$product->name}}</td>
+                                    <td>{{$product->category->name}}</td>
+                                    <td>{{$product->description}}</td>
+                                    <td><img class="img-thumbnail" src="{{$product->image_path}}" style="width: 60px; height:60px" alt="" /></td>
+                                    <td>{{$product->purchase_price}}</td>
+                                    <td>{{$product->sale_price}}</td>
+                                    <td>{{$product->stock}}</td>
                                     <td>
                                         <a class="btn btn-success btn-edit" href="{{route('product.edit', ['id' => $product->id])}}">
                                             <i class="fas fa-edit"></i>
@@ -82,13 +89,14 @@
 
                                 </tr>
                             @endforeach
-                        @endif --}}
+                        @endif
 
                     </tbody>
                     <tfoot>
                         <tr>
                             <th>#</th>
                             <th>{{trans('site.name')}}</th>
+                            <th>{{trans('site.category')}}</th>
                             <th>{{trans('site.description')}}</th>
                             <th>{{trans('site.image')}}</th>
                             <th>{{trans('site.purchase_price')}}</th>
