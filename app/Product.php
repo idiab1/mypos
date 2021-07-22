@@ -10,9 +10,16 @@ class Product extends Model
 {
     use Translatable;
 
-    protected $guarded = [];
+    protected $guarded = ['id'];
     public $translatedAttributes = ['name', 'description'];
+    protected $appends = ['image_path'];
 
+
+    // Get image path attribute
+    public function getImagePathAttribute()
+    {
+        return asset('uploads/products/' . $this->image);
+    }
 
     /**
      * Get the category that owns the Product
