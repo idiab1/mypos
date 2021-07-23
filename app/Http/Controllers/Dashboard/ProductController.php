@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 // use Illuminate\Support\Facades\Image;
 use Intervention\Image\ImageManagerStatic as Image;
 use App\Product;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -43,7 +44,9 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         // dd($request);
-        $rules = [];
+        $rules = [
+            'category_id'
+        ];
         foreach (config('translatable.locales') as $locale) {
             $rules += [$locale . '.name' => ['required', 'unique:product_translations,name']];
             $rules += [$locale . '.description' => ['required']];
@@ -71,16 +74,7 @@ class ProductController extends Controller
         return redirect()->route('products.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -90,7 +84,9 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = Product::find($id);
+        $categories = Category::all();
+        return view('dashboard.products.edit', compact('product', 'categories'));
     }
 
     /**
@@ -114,6 +110,9 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $product = Product::find($id);
+        if ($product->image != 'default.png') {
+            Storage::disk('public_uploads')->delete('/products/' . $product->image);
+        }
         $product->delete();
         session()->flash('success', trans('site.product_deleted'));
         return redirect()->route('products.index');
