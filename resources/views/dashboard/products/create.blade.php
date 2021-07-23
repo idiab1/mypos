@@ -81,10 +81,10 @@
 
                             <div class="form-group">
                                 <label for="image">{{ trans('site.image') }}</label>
-                                <input class="form-control" type="file" id="image" name="image" required>
+                                <input class="form-control image" type="file" id="image" name="image" required>
                             </div>
                             <div class="form-group">
-                                <img class="img-thumbnail " src="{{asset('uploads/products/default.png')}}" style="width: 100px" alt="">
+                                <img class="img-thumbnail image-preview" src="{{asset('uploads/products/default.png')}}" style="width: 100px" alt="">
                             </div>
                             <div class="form-group">
                                 <label for="purchase_price">{{ trans('site.purchase_price') }}</label>
@@ -125,6 +125,23 @@
         $(document).ready(function(){
             $('.select2').select2();
             CKEDITOR.config.language = "{{app()->getLocale()}}";
+
+            // Image Preview
+            $('.image').change(function(){
+                if(this.files && this.files[0]){
+
+                    let reader = new FileReader();
+
+                    reader.onload = function(e){
+
+                        $('.image-preview').attr('src', e.target.result);
+
+                    }
+                    reader.readAsDataURL(this.files[0]);
+
+                }
+            })
+
         });
     </script>
 @endsection
