@@ -149,11 +149,14 @@ return [
 
     'attributes' => [
         'ar' => [
-            'name' => 'Arabic Name',
+            'name'          => 'Arabic Name',
+            'description'   => 'Arabic Description',
         ],
 
         'en' => [
-            'name' => 'English Name',
+            'name'          => 'English Name',
+            'description'   => 'English Description',
+
         ],
     ],
 
