@@ -53,6 +53,7 @@
                             <th>{{trans('site.image')}}</th>
                             <th>{{trans('site.purchase_price')}}</th>
                             <th>{{trans('site.sale_price')}}</th>
+                            <th>{{trans('site.profit_percent')}}</th>
                             <th>{{trans('site.stock')}}</th>
                             <th>{{trans('site.action')}}</th>
                         </tr>
@@ -71,6 +72,7 @@
                                     <td><img class="img-thumbnail" src="{{$product->image_path}}" style="width: 60px; height:60px" alt="" /></td>
                                     <td>{{$product->purchase_price}}</td>
                                     <td>{{$product->sale_price}}</td>
+                                    <td>{{$product->profit_percent}} %</td>
                                     <td>{{$product->stock}}</td>
                                     <td>
                                         <a class="btn btn-success btn-edit" href="{{route('product.edit', ['id' => $product->id])}}">
@@ -101,6 +103,7 @@
                             <th>{{trans('site.image')}}</th>
                             <th>{{trans('site.purchase_price')}}</th>
                             <th>{{trans('site.sale_price')}}</th>
+                            <th>{{trans('site.profit_percent')}}</th>
                             <th>{{trans('site.stock')}}</th>
                             <th>{{trans('site.action')}}</th>
                         </tr>
