@@ -49,7 +49,7 @@ class ProductController extends Controller
         ];
         foreach (config('translatable.locales') as $locale) {
             $rules += [$locale . '.name' => ['required', 'unique:product_translations,name']];
-            $rules += [$locale . '.description' => ['required']];
+            $rules += [$locale . '.description' => ['required', 'string']];
         }
 
         $rules += [
@@ -98,7 +98,43 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        // dd($request->all());
+
+        $rules = [
+            'category_id'
+        ];
+        foreach (config('translatable.locales') as $locale) {
+            $rules += [$locale . '.name' => ['required']];
+            $rules += [$locale . '.description' => ['required', 'string']];
+        }
+
+        $rules += [
+            'purchase_price' => 'required',
+            'sale_price' => 'required',
+            'stock' => 'required',
+        ];
+
+        $request->validate($rules);
+        $request_data = $request->all();
+
+        // Find data of product by id
+        $product = Product::find($id);
+        if ($request->image) {
+            if ($product->image != "default.png") {
+                Storage::disk('public_uploads')->delete('/products/' . $product->image);
+            }
+            Image::make($request->image)->resize(300, null, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save(public_path('uploads/products/' . $request->image->hashName()));
+            $request_data['image'] = $request->image->hashName();
+        }
+
+
+        // Update data of product
+        $product->update($request_data);
+        session()->flash('success', trans('site.product_updated'));
+        return redirect()->route('products.index');
     }
 
     /**
