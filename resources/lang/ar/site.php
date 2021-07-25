@@ -21,6 +21,12 @@ return [
     "client_updated"        => "تم تحديث بيانات العميل",
     'client_deleted'        => 'تم حذف العميل',
     'all_clients'           => 'كل العملاء',
+    'type_name'             => 'اكتب اسم العميل',
+    'type_phone'            => 'ادخل رقم الهاتف',
+    'type_other_phone'      => 'اكتب رقم هاتف اخر',
+    'type_address'          => 'اكتب العنوان',
+
+
 
     // Categories
     "all_list_categories"   => 'قائمة بجميع الاقسام',
@@ -60,6 +66,7 @@ return [
     'category'          => 'قسم',
     'profit_percent'    => 'نسبة الارباح',
     'phone' => 'الهاتف',
+    'other_phone' => 'هاتف اخر',
     'address' => 'العنوان',
     'add_order' => 'اضافة الطلب',
 

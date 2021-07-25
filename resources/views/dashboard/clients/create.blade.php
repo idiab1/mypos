@@ -2,18 +2,18 @@
 
 {{-- Title --}}
 @section('title')
-    {{__('Add New Client')}}
+    {{trans('site.add_new_client')}}
 @endsection
 
 {{-- Page name --}}
 @section('page_name')
-    {{__('Add New Client')}}
+    {{trans('site.add_new_client')}}
 @endsection
 
 {{-- Breadcrumb Item --}}
 @section('breadcrumb-item')
-    <li class="breadcrumb-item "><a href="{{route('clients.index')}}">Clients</a></li>
-    <li class="breadcrumb-item active">Add New Client</li>
+    <li class="breadcrumb-item "><a href="{{route('clients.index')}}">{{trans('site.clients')}}</a></li>
+    <li class="breadcrumb-item active">{{trans('site.add_new_client')}}</li>
 @endsection
 
 {{-- Content --}}
@@ -25,7 +25,7 @@
                 <div class="card card-primary">
 
                     <div class="card-header">
-                        <h3 class="card-title">Add New Client</h3>
+                        <h3 class="card-title">{{trans('site.add_new_client')}}</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
@@ -33,26 +33,26 @@
                         @csrf
                         <div class="card-body">
                             <div class="form-group">
-                                <label for="name">Name</label>
-                                <input class="form-control" type="text" id="name" name="name" placeholder="Type name of client" required>
+                                <label for="name">{{trans('site.name')}}</label>
+                                <input class="form-control" type="text" id="name" name="name" placeholder="{{trans('site.type_name')}}" required>
                             </div>
                             <div class="form-group">
-                                <label for="phone">Phone</label>
-                                <input class="form-control" type="number" id="phone" name="phone[]" placeholder="Type of your number phone" required>
+                                <label for="phone">{{trans('site.phone')}}</label>
+                                <input class="form-control" type="number" id="phone" name="phone[]" placeholder="{{trans('site.type_phone')}}" required>
                             </div>
                             <div class="form-group">
-                                <label for="other_phone">Other Phone</label>
-                                <input class="form-control" type="number" id="other_phone" name="phone[]" placeholder="Type of your other number phone">
+                                <label for="other_phone">{{trans('site.other_phone')}}</label>
+                                <input class="form-control" type="number" id="other_phone" name="phone[]" placeholder="{{trans('site.type_other_phone')}}">
                             </div>
                             <div class="form-group">
-                                <label for="address">Address</label>
-                                <input class="form-control address" type="text" name="address" id="address" placeholder="Type of your address" required>
+                                <label for="address">{{trans('site.address')}}</label>
+                                <input class="form-control address" type="text" name="address" id="address" placeholder="{{trans('site.type_address')}}" required>
                             </div>
 
                         </div>
                     <!-- /.card-body -->
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i> {{trans('site.add')}}</button>
                     </div>
                 </form>
 

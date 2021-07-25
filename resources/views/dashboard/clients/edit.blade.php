@@ -2,18 +2,18 @@
 
 {{-- Title --}}
 @section('title')
-    {{__('Edit')}} {{$client->name."'s" }}
+    {{trans('site.edit')}} {{$client->name."'s" }}
 @endsection
 
 {{-- Page name --}}
 @section('page_name')
-    {{__('Edit')}} {{$client->name."'s" }}
+    {{trans('site.edit')}} {{$client->name."'s" }}
 @endsection
 
 {{-- Breadcrumb Item --}}
 @section('breadcrumb-item')
-    <li class="breadcrumb-item "><a href="{{route('clients.index')}}">Clients</a></li>
-    <li class="breadcrumb-item active">Edit {{$client->name."'s" }}</li>
+    <li class="breadcrumb-item "><a href="{{route('clients.index')}}">{{trans('site.clients')}}</a></li>
+    <li class="breadcrumb-item active">{{trans('site.edit')}} {{$client->name."'s" }}</li>
 @endsection
 
 {{-- Content --}}
@@ -25,7 +25,7 @@
                 <div class="card card-primary">
 
                     <div class="card-header">
-                        <h3 class="card-title">Edit {{$client->name."'s" }}</h3>
+                        <h3 class="card-title">{{trans('site.edit')}} {{$client->name."'s" }}</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
@@ -34,25 +34,25 @@
                         @method('PUT')
                         <div class="card-body">
                             <div class="form-group">
-                                <label for="name">Name</label>
-                                <input class="form-control" type="text" id="name" name="name" value="{{$client->name}}" placeholder="Type name of client">
+                                <label for="name">{{trans('site.name')}}</label>
+                                <input class="form-control" type="text" id="name" name="name" value="{{$client->name}}" placeholder="{{trans('site.type_name')}}">
                             </div>
                             <div class="form-group">
-                                <label for="phone">Phone</label>
-                                <input class="form-control" type="number" id="phone" name="phone[]" value="{{$client->phone[0]}}" placeholder="Type of your number phone" required>
+                                <label for="phone">{{trans('site.phone')}}</label>
+                                <input class="form-control" type="number" id="phone" name="phone[]" value="{{$client->phone[0]}}" placeholder="{{trans('site.type_phone')}}" required>
                             </div>
                             <div class="form-group">
-                                <label for="other_phone">Other Phone</label>
-                                <input class="form-control" type="number" id="other_phone" name="phone[]" value="{{$client->phone[1]}}" placeholder="Type of your other number phone">
+                                <label for="other_phone">{{trans('site.other_phone')}}</label>
+                                <input class="form-control" type="number" id="other_phone" name="phone[]" value="{{$client->phone[1]}}" placeholder="{{trans('site.type_other_phone')}}">
                             </div>
                             <div class="form-group">
-                                <label for="address">Address</label>
-                                <input class="form-control address" type="text" name="address" id="address" value="{{$client->address}}" placeholder="Type of your address" required>
+                                <label for="address">{{trans('site.address')}}</label>
+                                <input class="form-control address" type="text" name="address" id="address" value="{{$client->address}}" placeholder="{{trans('site.type_address')}}" required>
                             </div>
                         </div>
                     <!-- /.card-body -->
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-success">Submit</button>
+                        <button type="submit" class="btn btn-primary">{{trans('site.edit')}}</button>
                     </div>
                 </form>
 

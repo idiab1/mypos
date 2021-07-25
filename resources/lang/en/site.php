@@ -21,6 +21,10 @@ return [
     "client_updated"        => "Client of Updated",
     'client_deleted'        => 'Client of deleted',
     'all_clients'           => 'All Clients',
+    'type_name'             => 'Type name of client',
+    'type_phone'            => 'Type of your number phone',
+    'type_other_phone'      => 'Type of your other number phone',
+    'type_address'          => 'Type of your address',
 
     // Categories
     "all_list_categories"   => 'List of All Categories',
@@ -62,6 +66,7 @@ return [
     'category'          => 'Category',
     'profit_percent'    => 'Profit Percent',
     'phone' => 'Phone',
+    'other_phone' => 'Other Phone',
     'address' => 'Address',
     'add_order' => 'Add Order',
 
