@@ -42,6 +42,20 @@ Route::group(
                 'destroy'   => 'client.destroy',
             ]);
 
+            //  Clients Routes
+            Route::resource('clients.orders', "Client\OrderController")->except([
+                'show',
+            ])->parameters([
+                "clients" => 'id'
+            ])->names([
+                'index'     => 'clients.orders.index',
+                'create'    => 'clients.orders.create',
+                'store'     => 'clients.orders.store',
+                'edit'      => 'clients.orders.edit',
+                'update'    => 'clients.orders.update',
+                'destroy'   => 'clients.orders.destroy',
+            ]);
+
             //  Categories Routes
             Route::resource('categories', "CategoryController")->except([
                 'show',
