@@ -11,18 +11,18 @@
 
 {{-- Title --}}
 @section('title')
-    {{__('Clients')}}
+    {{trans('site.clients')}}
 @endsection
 
 {{-- Page name --}}
 
 @section('page_name')
-    {{__('Clients')}}
+    {{trans('site.clients')}}
 @endsection
 
 {{-- Breadcrumb Item --}}
 @section('breadcrumb-item')
-    <li class="breadcrumb-item active">Clients</li>
+    <li class="breadcrumb-item active">{{trans('site.clients')}}</li>
 @endsection
 
 {{-- Content --}}
@@ -32,11 +32,11 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col-sm-8">
-                        <h3 class="card-title">List of All Clients</h3>
+                        <h3 class="card-title">{{trans('site.all_list_clients')}}</h3>
                     </div>
                     <div class="col-sm-4 float-sm-right">
                         <a class="btn btn-primary btn-add-new" href="{{route('client.create')}}">
-                            <i class="fas fa-plus"></i> Add New Client
+                            <i class="fas fa-plus"></i> {{trans('site.add_new_client')}}
                         </a>
                     </div>
                 </div>
@@ -47,10 +47,11 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Name</th>
-                            <th>Phone</th>
-                            <th>Address</th>
-                            <th>Action</th>
+                            <th>{{trans('site.name')}}</th>
+                            <th>{{trans('site.phone')}}</th>
+                            <th>{{trans('site.address')}}</th>
+                            <th>{{trans('site.add_order')}}</th>
+                            <th>{{trans('site.action')}}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -64,17 +65,18 @@
                                     <td>{{$client->name}}</td>
                                     <td>{{implode(array_filter($client->phone), '-')}}</td>
                                     <td>{{$client->address}}</td>
+                                    <td><a class="btn btn-primary btn-sm btn-add-order" href="{{route('clients.orders.create', ['id' => $client->id])}}">{{trans('site.add_order')}}</a></td>
                                     <td>
                                         <a class="btn btn-success btn-edit" href="{{route('client.edit', ['id' => $client->id])}}">
                                             <i class="fas fa-edit"></i>
-                                            Edit
+                                            {{trans('site.edit')}}
                                         </a>
                                         <form action="{{route('client.destroy', ['id' => $client->id])}}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn btn-danger btn-delete" type="submit">
                                                 <i class="fas fa-trash"></i>
-                                                Delete
+                                                {{trans('site.delete')}}
                                             </button>
                                         </form>
                                     </td>
@@ -87,10 +89,11 @@
                     <tfoot>
                         <tr>
                             <th>#</th>
-                            <th>Name</th>
-                            <th>Phone</th>
-                            <th>Address</th>
-                            <th>Action</th>
+                            <th>{{trans('site.name')}}</th>
+                            <th>{{trans('site.phone')}}</th>
+                            <th>{{trans('site.address')}}</th>
+                            <th>{{trans('site.add_order')}}</th>
+                            <th>{{trans('site.action')}}</th>
                         </tr>
                     </tfoot>
                 </table>

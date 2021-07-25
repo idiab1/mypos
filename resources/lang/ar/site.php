@@ -14,6 +14,13 @@ return [
     // Users
 
     // Clients
+    "all_list_clients"      => 'قائمة بجميع العملاء',
+    'add_new_client'        => 'اضافة عميل جديد',
+    'create_new_client'     => 'اضافة عميل جديد',
+    "client_created"        => "تم اضافة العميل",
+    "client_updated"        => "تم تحديث بيانات العميل",
+    'client_deleted'        => 'تم حذف العميل',
+    'all_clients'           => 'كل العملاء',
 
     // Categories
     "all_list_categories"   => 'قائمة بجميع الاقسام',
@@ -52,6 +59,11 @@ return [
     'stock'             => 'المخزون',
     'category'          => 'قسم',
     'profit_percent'    => 'نسبة الارباح',
+    'phone' => 'الهاتف',
+    'address' => 'العنوان',
+    'add_order' => 'اضافة الطلب',
+
+
 
     'ar' => [
         'name'          => 'الاسم باللغة العربية',

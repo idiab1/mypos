@@ -14,6 +14,13 @@ return [
     // Users
 
     // Clients
+    "all_list_clients"      => 'List of All Clients',
+    'add_new_client'        => 'Add New Client',
+    'create_new_client'     => 'Create New Client',
+    "client_created"        => "Client of created",
+    "client_updated"        => "Client of Updated",
+    'client_deleted'        => 'Client of deleted',
+    'all_clients'           => 'All Clients',
 
     // Categories
     "all_list_categories"   => 'List of All Categories',
@@ -54,6 +61,9 @@ return [
     'stock'             => 'Stock',
     'category'          => 'Category',
     'profit_percent'    => 'Profit Percent',
+    'phone' => 'Phone',
+    'address' => 'Address',
+    'add_order' => 'Add Order',
 
     'ar' => [
         'name'          => 'Arabic Name',
