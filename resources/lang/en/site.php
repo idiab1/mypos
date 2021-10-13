@@ -54,6 +54,7 @@ return [
     'home'              => 'Home',
     'name'              => 'Name',
     'action'            => 'Action',
+    'product_count'     => 'Product Count',
     'add'               => 'Add',
     'type'              => 'Type',
     'edit'              => 'Edit',
