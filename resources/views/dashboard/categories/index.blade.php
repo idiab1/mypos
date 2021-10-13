@@ -48,6 +48,7 @@
                         <tr>
                             <th>#</th>
                             <th>{{trans('site.name')}}</th>
+                            <th>{{trans('site.product_count')}}</th>
                             <th>{{trans('site.action')}}</th>
                         </tr>
                     </thead>
@@ -60,15 +61,16 @@
                                 <tr>
                                     <td>{{$id++}}</td>
                                     <td>{{$category->name}}</td>
+                                    <td>{{$category->products->count()}}</td>
                                     <td>
-                                        <a class="btn btn-success btn-edit" href="{{route('category.edit', ['id' => $category->id])}}">
+                                        <a class="btn btn-success btn-edit btn-sm" href="{{route('category.edit', ['id' => $category->id])}}">
                                             <i class="fas fa-edit"></i>
                                             {{trans('site.edit')}}
                                         </a>
                                         <form action="{{route('category.destroy', ['id' => $category->id])}}" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <button class="btn btn-danger btn-delete" type="submit">
+                                            <button class="btn btn-danger btn-delete btn-sm" type="submit">
                                                 <i class="fas fa-trash"></i>
                                                 {{trans('site.delete')}}
                                             </button>
@@ -84,6 +86,7 @@
                         <tr>
                             <th>#</th>
                             <th>{{trans('site.name')}}</th>
+                            <th>{{trans('site.product_count')}}</th>
                             <th>{{trans('site.action')}}</th>
                         </tr>
                     </tfoot>
