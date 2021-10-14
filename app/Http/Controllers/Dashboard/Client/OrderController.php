@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard\Client;
 
+use App\Category;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -24,7 +25,8 @@ class OrderController extends Controller
      */
     public function create()
     {
-        return view("dashboard.clients.orders.create");
+        $categories = Category::all();
+        return view("dashboard.clients.orders.create", compact("categories"));
     }
 
     /**
