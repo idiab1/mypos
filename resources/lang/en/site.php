@@ -48,7 +48,8 @@ return [
     'type_purchase_price'   => 'Type price of purchase ',
     'type_sale_price'       => 'Type price of sale',
 
-
+    // Orders
+    'orders'                => 'Orders',
 
     // Facades
     'home'              => 'Home',
@@ -66,10 +67,10 @@ return [
     'stock'             => 'Stock',
     'category'          => 'Category',
     'profit_percent'    => 'Profit Percent',
-    'phone' => 'Phone',
-    'other_phone' => 'Other Phone',
-    'address' => 'Address',
-    'add_order' => 'Add Order',
+    'phone'             => 'Phone',
+    'other_phone'       => 'Other Phone',
+    'address'           => 'Address',
+    'add_order'         => 'Add Order',
 
     'ar' => [
         'name'          => 'Arabic Name',
