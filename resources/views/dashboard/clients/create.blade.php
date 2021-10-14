@@ -50,11 +50,11 @@
                             </div>
 
                         </div>
-                    <!-- /.card-body -->
-                    <div class="card-footer">
-                        <button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i> {{trans('site.add')}}</button>
-                    </div>
-                </form>
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i> {{trans('site.add')}}</button>
+                        </div>
+                    </form>
 
                 </div>
                 <!-- /.card -->
