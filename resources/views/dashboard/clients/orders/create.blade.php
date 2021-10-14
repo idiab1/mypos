@@ -1,0 +1,127 @@
+@extends('dashboard.layouts.app')
+
+{{-- Title --}}
+@section('title')
+    {{trans('site.add_order')}}
+@endsection
+
+{{-- Page name --}}
+@section('page_name')
+    {{trans('site.add_order')}}
+@endsection
+
+{{-- Breadcrumb Item --}}
+@section('breadcrumb-item')
+    <li class="breadcrumb-item "><a href="{{route('clients.index')}}">{{trans('site.clients')}}</a></li>
+    <li class="breadcrumb-item active">{{trans('site.add_order')}}</li>
+@endsection
+
+{{-- Content --}}
+@section('content')
+    <div class="clients-form-page">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card card-categories card-outline card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">{{trans('site.categories')}}</h3>
+                    </div>
+
+                    <div class="card-body p-0">
+
+                        @if ($categories->count() > 0)
+                            @foreach ($categories as $category)
+                                <table class="table table-hover">
+                                    <tbody>
+                                        <tr data-widget="expandable-table" aria-expanded="false">
+                                            <td class="bg-primary">
+                                                <h5>{{$category->name}}</h5>
+                                            </td>
+                                        </tr>
+                                        <tr class="expandable-body">
+                                            <td>
+                                                @if ($category->products->count() > 0)
+                                                        <div class="p-0">
+                                                            <table class="table table-hover">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>Name</th>
+                                                                        <th>Price</th>
+                                                                        <th>Stored</th>
+                                                                        <th>Add</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    @foreach ($category->products as $product)
+                                                                        <tr>
+                                                                            <td>{{$product->name}}</td>
+                                                                            <td>Mark</td>
+                                                                            <td>{{$product->stock}}</td>
+                                                                            <td>
+                                                                                <a class="btn btn-sm btn-primary btn-add" href="#">
+                                                                                    <i class="fas fa-plus"></i>
+                                                                                </a>
+                                                                            </td>
+                                                                        </tr>
+                                                                    @endforeach
+
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                @else
+                                                    <p>not categories exist yet</p>
+                                                @endif
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            @endforeach
+                        @else
+                            <p>not categories exist yet</p>
+                        @endif
+
+
+
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="col-md-6">
+                <div class="card card-orders card-outline card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">{{trans('site.orders')}}</h3>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Price</th>
+                                    <th>Stored</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="total-price">
+                            <p class="d-inline-block font-weight-bold">Total Price</p> &colon; <span>150.00</span>
+                        </div>
+                        <form action="">
+                            <button class="btn btn-primary" type="submit">Add Order</button>
+                        </form>
+
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
