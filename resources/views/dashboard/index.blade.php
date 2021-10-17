@@ -19,13 +19,12 @@
                 <div class="small-box bg-dark">
                     <div class="inner">
                         <h3>0</h3>
-
                         <p>Users</p>
                     </div>
                     <div class="icon">
                         <i class="fas fa-users-cog"></i>
                     </div>
-                    <a href="#" class="small-box-footer">
+                    <a href="{{route("users.index")}}" class="small-box-footer">
                         More info <i class="fas fa-arrow-circle-right"></i>
                     </a>
                 </div>
@@ -34,13 +33,12 @@
                 <div class="small-box bg-secondary">
                     <div class="inner">
                         <h3>0</h3>
-
                         <p>Clients</p>
                     </div>
                     <div class="icon">
                         <i class="fas fa-user-plus"></i>
                     </div>
-                    <a href="#" class="small-box-footer">
+                    <a href="{{route("clients.index")}}" class="small-box-footer">
                         More info <i class="fas fa-arrow-circle-right"></i>
                     </a>
                 </div>
@@ -66,14 +64,13 @@
             <div class="col-md-4 col-sm-12">
                 <div class="small-box bg-warning">
                     <div class="inner">
-                        <h3>44</h3>
-
+                        <h3>0</h3>
                         <p>Categories</p>
                     </div>
                     <div class="icon">
                         <i class="fas fa-layer-group"></i>
                     </div>
-                    <a href="#" class="small-box-footer">
+                    <a href="{{route("categories.index")}}" class="small-box-footer">
                         More info <i class="fas fa-arrow-circle-right"></i>
                     </a>
                 </div>
@@ -82,13 +79,12 @@
                 <div class="small-box bg-primary">
                     <div class="inner">
                         <h3>0</h3>
-
                         <p>Products</p>
                     </div>
                     <div class="icon">
                         <i class="fas fa-clone"></i>
                     </div>
-                    <a href="#" class="small-box-footer">
+                    <a href="{{route("products.index")}}" class="small-box-footer">
                         More info <i class="fas fa-arrow-circle-right"></i>
                     </a>
                 </div>
