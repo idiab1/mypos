@@ -67,14 +67,14 @@
                                     <td>{{$client->address}}</td>
                                     <td><a class="btn btn-primary btn-sm btn-add-order" href="{{route('clients.orders.create', ['id' => $client->id])}}">{{trans('site.add_order')}}</a></td>
                                     <td>
-                                        <a class="btn btn-success btn-edit" href="{{route('client.edit', ['id' => $client->id])}}">
+                                        <a class="btn btn-success btn-edit btn-sm" href="{{route('client.edit', ['id' => $client->id])}}">
                                             <i class="fas fa-edit"></i>
                                             {{trans('site.edit')}}
                                         </a>
                                         <form action="{{route('client.destroy', ['id' => $client->id])}}" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <button class="btn btn-danger btn-delete" type="submit">
+                                            <button class="btn btn-danger btn-delete btn-sm" type="submit">
                                                 <i class="fas fa-trash"></i>
                                                 {{trans('site.delete')}}
                                             </button>
