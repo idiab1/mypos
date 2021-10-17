@@ -42,7 +42,7 @@ Route::group(
                 'destroy'   => 'client.destroy',
             ]);
 
-            //  Clients Routes
+            //  Orders Routes
             Route::resource('clients.orders', "Client\OrderController")->except([
                 'show',
             ])->parameters([
@@ -69,7 +69,6 @@ Route::group(
                 'update'    => 'category.update',
                 'destroy'   => 'category.destroy',
             ]);
-
 
 
             //  Products Routes
