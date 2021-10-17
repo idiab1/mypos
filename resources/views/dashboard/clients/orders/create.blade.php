@@ -54,7 +54,7 @@
                                                                     @foreach ($category->products as $product)
                                                                         <tr>
                                                                             <td>{{$product->name}}</td>
-                                                                            <td>Mark</td>
+                                                                            <td>{{$product->sale_price}}</td>
                                                                             <td>{{$product->stock}}</td>
                                                                             <td>
                                                                                 <a class="btn btn-sm btn-primary btn-add" href="#">
@@ -99,8 +99,8 @@
                             <thead>
                                 <tr>
                                     <th>Name</th>
+                                    <th>Quantity</th>
                                     <th>Price</th>
-                                    <th>Stored</th>
                                 </tr>
                             </thead>
                             <tbody>
