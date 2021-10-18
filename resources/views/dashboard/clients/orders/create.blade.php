@@ -57,7 +57,9 @@
                                                                             <td>{{$product->sale_price}}</td>
                                                                             <td>{{$product->stock}}</td>
                                                                             <td>
-                                                                                <a class="btn btn-sm btn-primary btn-add" href="#">
+                                                                                <a class="btn btn-sm btn-primary btn-product-add product-{{$product->id}}" href="#"
+                                                                                id="product-{{$product->id}}" data-id="{{$product->id}}"
+                                                                                data-name="{{$product->name}}" data-price="{{$product->sale_price}}" >
                                                                                     <i class="fas fa-plus"></i>
                                                                                 </a>
                                                                             </td>
@@ -103,12 +105,8 @@
                                     <th>Price</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
+                            <tbody class="order-list">
+
                             </tbody>
                         </table>
                         <div class="total-price">
@@ -125,3 +123,9 @@
         </div>
     </div>
 @endsection
+
+{{-- Other scripts --}}
+@section('scripts')
+    <script src="{{asset("dashboard\js\custom\order.js")}}"></script>
+@endsection
+
