@@ -19,9 +19,9 @@ productAddBtns.forEach(productAddBtn => {
             <td><input class="form-control" type="number" name="products[]" data-price="${price}" value="1" min="1"></td>
             <td>${price}</td>
             <td>
-                <a class="btn btn-danger btn-sm btn-product-remove" href="#" data-id="${id}">
+                <button class="btn btn-danger btn-sm btn-product-remove" href="#" data-id="${id}">
                     <i class="fas fa-trash"></i>
-                </a>
+                </button>
             </td>
         </tr>`;
 
@@ -32,34 +32,12 @@ productAddBtns.forEach(productAddBtn => {
         // Append row element to order list
         orderList.insertAdjacentHTML("beforeend", row)
 
-        // console.log(name)
-        // console.log(id)
-        // console.log(price)
+        // let productRemoveBtns = document.querySelectorAll(".order-list .btn-product-remove");
+        // console.log(productRemoveBtns)
     })
 })
 
-// Select on product remove button
-let productRemoveBtns = document.querySelectorAll(".btn-product-remove");
+document.querySelector("body").addEventListener("click", e =>{
+    console.log(e.currentTarget)
 
-productRemoveBtns.forEach(productRemoveBtn => {
-
-    productRemoveBtn.addEventListener("click", (e) => {
-
-        e.preventDefault()
-
-        console.log(this)
-
-        // Select on data id of product add button
-        // let id = this.getAttribute("data-id")
-
-        // let product = document.querySelector("#product-" + id)
-        // console.log(product)
-
-        // product.classList.remove("btn-default")
-        // product.classList.remove("disabled")
-        // product.classList.add("btn-primary")
-
-    })
 })
-
-

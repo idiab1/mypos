@@ -126,6 +126,6 @@
 
 {{-- Other scripts --}}
 @section('scripts')
-    <script src="{{asset("dashboard\js\custom\order.js")}}"></script>
+    <script src="{{asset("dashboard/js\custom/order.js")}}"></script>
 @endsection
 
