@@ -32,12 +32,27 @@ productAddBtns.forEach(productAddBtn => {
         // Append row element to order list
         orderList.insertAdjacentHTML("beforeend", row)
 
-        // let productRemoveBtns = document.querySelectorAll(".order-list .btn-product-remove");
-        // console.log(productRemoveBtns)
+        // Select on product remove button
+        let productRemoveBtns = document.querySelectorAll(".order-list .btn-product-remove");
+
+        productRemoveBtns.forEach(productRemoveBtn => {
+
+            productRemoveBtn.addEventListener("click", (e) => {
+
+
+                // Select on data id of product add button
+                let id = productRemoveBtn.getAttribute("data-id")
+
+                let product = document.querySelector("#product-" + id)
+                console.log(product)
+                // console.log(productRemoveBtn.parentElement.parentElement)
+                productRemoveBtn.parentElement.parentElement.remove()
+                product.classList.remove("btn-default")
+                product.classList.remove("disabled")
+                product.classList.add("btn-primary")
+
+            })
+        })
     })
 })
 
-document.querySelector("body").addEventListener("click", e =>{
-    console.log(e.currentTarget)
-
-})
