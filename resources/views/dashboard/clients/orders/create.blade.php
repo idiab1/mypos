@@ -110,7 +110,7 @@
                             </tbody>
                         </table>
                         <div class="total-price">
-                            <p class="d-inline-block font-weight-bold">Total Price</p> &colon; <span>150.00</span>
+                            <p class="d-inline-block font-weight-bold">Total Price</p> &colon; <span class="total">00</span>
                         </div>
                         <form action="">
                             <button class="btn btn-primary" type="submit">Add Order</button>
