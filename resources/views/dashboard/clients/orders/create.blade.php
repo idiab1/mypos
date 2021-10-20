@@ -97,25 +97,27 @@
                         <h3 class="card-title">{{trans('site.orders')}}</h3>
                     </div>
                     <div class="card-body">
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Quantity</th>
-                                    <th>Price</th>
-                                </tr>
-                            </thead>
-                            <tbody class="order-list">
+                        <form action="{{route("clients.orders.store", ['id' => $client->id])}}" method="POST">
+                            @csrf
+                            @method("POST")
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Quantity</th>
+                                        <th>Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="order-list">
 
-                            </tbody>
-                        </table>
-                        <div class="total-price">
-                            <p class="d-inline-block font-weight-bold">Total Price</p> &colon; <span class="total">00</span>
-                        </div>
-                        <form action="">
-                            <button class="btn btn-primary disabled" type="submit">Add Order</button>
+                                </tbody>
+                            </table>
+                            <div class="total-price">
+                                <p class="d-inline-block font-weight-bold">Total Price</p> &colon; <span class="total">00</span>
+                            </div>
+                            <button class="btn btn-primary disabled btn-add-order" type="submit">Add Order</button>
+
                         </form>
-
                     </div>
                     <!-- /.card-body -->
                 </div>
