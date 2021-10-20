@@ -16,8 +16,8 @@ productAddBtns.forEach(productAddBtn => {
         let row =
         `<tr>
             <td>${name}</td>
-            <td><input class="form-control" type="number" name="products[]" data-price="${price}" value="1" min="1"></td>
-            <td>${price}</td>
+            <td><input class="form-control product-quantity" type="number" name="products[]" data-price="${price}" value="1" min="1"></td>
+            <td class="product-price">${price}</td>
             <td>
                 <button class="btn btn-danger btn-sm btn-product-remove" href="#" data-id="${id}">
                     <i class="fas fa-trash"></i>
@@ -36,23 +36,44 @@ productAddBtns.forEach(productAddBtn => {
         let productRemoveBtns = document.querySelectorAll(".order-list .btn-product-remove");
 
         productRemoveBtns.forEach(productRemoveBtn => {
-
+            // remvoe row when click
             productRemoveBtn.addEventListener("click", (e) => {
-
 
                 // Select on data id of product add button
                 let id = productRemoveBtn.getAttribute("data-id")
 
                 let product = document.querySelector("#product-" + id)
-                console.log(product)
-                // console.log(productRemoveBtn.parentElement.parentElement)
+                // Remove product from order list
                 productRemoveBtn.parentElement.parentElement.remove()
+
                 product.classList.remove("btn-default")
                 product.classList.remove("disabled")
                 product.classList.add("btn-primary")
 
+                totalPrice()
             })
         })
+
+        totalPrice()
+
     })
 })
 
+// Calculate total price for orders list
+function totalPrice(){
+
+    let price = 0;
+
+    // Select on all products
+    let productsPrice = document.querySelectorAll(".order-list .product-price");
+
+    productsPrice.forEach(productPrice => {
+        // change data type for productPrice
+        price += parseInt(productPrice.textContent)
+    })
+
+    // Select on total price element
+    let totalPrice = document.querySelector(".total-price .total");
+
+    totalPrice.textContent = price
+}
