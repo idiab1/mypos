@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard\Client;
 
 use App\Category;
+use App\Client;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -23,10 +24,11 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
         $categories = Category::all();
-        return view("dashboard.clients.orders.create", compact("categories"));
+        $client = Client::find($id);
+        return view("dashboard.clients.orders.create", compact("categories", "client"));
     }
 
     /**
@@ -37,7 +39,7 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request);
     }
 
     /**
