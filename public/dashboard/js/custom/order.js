@@ -54,6 +54,24 @@ productAddBtns.forEach(productAddBtn => {
             })
         })
 
+        // Calculate price for product
+        let productsQty = document.querySelectorAll(".product-quantity")
+        productsQty.forEach(productQty => {
+
+            productQty.addEventListener("change", () => {
+
+                let price = productQty.value * productQty.getAttribute("data-price")
+
+                let productPrice = productQty.parentElement.nextElementSibling;
+
+                productPrice.textContent = price
+
+                totalPrice()
+
+
+            })
+        })
+
         totalPrice()
 
     })
@@ -69,11 +87,17 @@ function totalPrice(){
 
     productsPrice.forEach(productPrice => {
         // change data type for productPrice
-        price += parseInt(productPrice.textContent)
+        price += Number(productPrice.textContent)
     })
 
     // Select on total price element
     let totalPrice = document.querySelector(".total-price .total");
 
     totalPrice.textContent = price
+
+    //
 }
+
+
+
+
