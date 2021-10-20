@@ -113,7 +113,7 @@
                             <p class="d-inline-block font-weight-bold">Total Price</p> &colon; <span class="total">00</span>
                         </div>
                         <form action="">
-                            <button class="btn btn-primary" type="submit">Add Order</button>
+                            <button class="btn btn-primary disabled" type="submit">Add Order</button>
                         </form>
 
                     </div>
