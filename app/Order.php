@@ -8,12 +8,16 @@ class Order extends Model
 {
     protected $guarded = [];
 
-    public function users(){
-        return $this->belongsTo(User::class);
+    public function clients(){
+
+        return $this->belongsTo(Client::class);
+
     }
 
     public function products(){
+
         return $this->belongsToMany(Product::class, "product_order");
+
     }
 
 }
