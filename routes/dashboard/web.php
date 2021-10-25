@@ -42,7 +42,7 @@ Route::group(
                 'destroy'   => 'client.destroy',
             ]);
 
-            //  Orders Routes
+            //  Orders Client Routes
             Route::resource('clients.orders', "Client\OrderController")->except([
                 'show',
             ])->parameters([
@@ -86,6 +86,18 @@ Route::group(
             ]);
         }); // End of dashboard routes
 
+        // Orders Routes
+        Route::resource('orders', "OrderController")->parameters([
+            "orders" => 'id'
+        ])->names([
+            'index'     => 'orders.index',
+            'create'    => 'orders.create',
+            'store'     => 'orders.store',
+            'show'      => 'orders.show',
+            'edit'      => 'orders.edit',
+            'update'    => 'orders.update',
+            'destroy'   => 'orders.destroy',
+        ]);
 
     }
 );
