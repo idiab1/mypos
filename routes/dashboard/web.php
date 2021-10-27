@@ -84,20 +84,22 @@ Route::group(
                 'update'    => 'product.update',
                 'destroy'   => 'product.destroy',
             ]);
+
+            // Orders Routes
+            Route::resource('orders', "OrderController")->parameters([
+                "orders" => 'id'
+            ])->names([
+                'index'     => 'orders.index',
+                'create'    => 'order.create',
+                'store'     => 'order.store',
+                'show'      => 'order.show',
+                'edit'      => 'order.edit',
+                'update'    => 'order.update',
+                'destroy'   => 'order.destroy',
+            ]);
+
         }); // End of dashboard routes
 
-        // Orders Routes
-        Route::resource('orders', "OrderController")->parameters([
-            "orders" => 'id'
-        ])->names([
-            'index'     => 'orders.index',
-            'create'    => 'order.create',
-            'store'     => 'order.store',
-            'show'      => 'order.show',
-            'edit'      => 'order.edit',
-            'update'    => 'order.update',
-            'destroy'   => 'order.destroy',
-        ]);
 
     }
 );
