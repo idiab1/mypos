@@ -76,6 +76,15 @@
                     </li>
                 @endif
 
+                {{-- @if (auth()->user()->hasPermission('read-orders')) --}}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('orders.index')}}">
+                            <i class="nav-icon fas fa-clone"></i>
+                            <p>{{trans('site.orders')}}</p>
+                        </a>
+                    </li>
+                {{-- @endif --}}
+
 
             </ul>
         </nav>
