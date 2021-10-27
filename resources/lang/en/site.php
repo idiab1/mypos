@@ -50,6 +50,7 @@ return [
 
     // Orders
     'orders'                => 'Orders',
+    'show_orders'           => 'Show Orders',
 
     // Facades
     'home'              => 'Home',
@@ -71,6 +72,10 @@ return [
     'other_phone'       => 'Other Phone',
     'address'           => 'Address',
     'add_order'         => 'Add Order',
+    'name_client'       => "Name Client",
+    'added'             => "Added",
+    'price'             => "Price",
+    'show'              => "Show",
 
     'ar' => [
         'name'          => 'Arabic Name',
