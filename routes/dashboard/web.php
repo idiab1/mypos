@@ -91,12 +91,12 @@ Route::group(
             "orders" => 'id'
         ])->names([
             'index'     => 'orders.index',
-            'create'    => 'orders.create',
-            'store'     => 'orders.store',
-            'show'      => 'orders.show',
-            'edit'      => 'orders.edit',
-            'update'    => 'orders.update',
-            'destroy'   => 'orders.destroy',
+            'create'    => 'order.create',
+            'store'     => 'order.store',
+            'show'      => 'order.show',
+            'edit'      => 'order.edit',
+            'update'    => 'order.update',
+            'destroy'   => 'order.destroy',
         ]);
 
     }
