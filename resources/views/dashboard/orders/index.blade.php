@@ -6,7 +6,55 @@
 <link rel="stylesheet" href="{{asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
 <link rel="stylesheet" href="{{asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
 <link rel="stylesheet" href="{{asset('plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
+<style>
+    .loading{
+        display: none;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .loading .loader{
+        width: 100px;
+        height: 100px;
+        border: 5px solid #ddd;
+        border-top-color: #007bff;
+        border-radius: 50%;
+        animation: spinner 2s linear infinite;
+    }
 
+    @-webkit-keyframes spinner{
+        0%{
+            transform: rotate(0deg);
+        }
+        100%{
+            transform: rotate(360deg);
+        }
+    }
+    @-moz-keyframes spinner{
+        0%{
+            transform: rotate(0deg);
+        }
+        100%{
+            transform: rotate(360deg);
+        }
+    }
+    @-o-keyframes spinner{
+        0%{
+            transform: rotate(0deg);
+        }
+        100%{
+            transform: rotate(360deg);
+        }
+    }
+    @keyframes spinner{
+        0%{
+            transform: rotate(0deg);
+        }
+        100%{
+            transform: rotate(360deg);
+        }
+    }
+</style>
 @endsection
 
 {{-- Title --}}
@@ -55,10 +103,13 @@
                                             <td>{{$order->total_price}}</td>
                                             <td>{{$order->created_at->toFormattedDateString()}}</td>
                                             <td>
-                                                <a class="btn btn-primary btn-edit btn-sm" href="{{route('order.show', ['id' => $order->id])}}">
-                                                    <i class="fas fa-eye"></i>
+                                                <button class="btn btn-primary btn-order-product btn-sm"
+                                                    data-url="{{route("order.products", ["order" => $order->id])}}"
+                                                    data-method="get"
+                                                >
+                                                    <i class="fas fa-list"></i>
                                                     {{trans('site.show')}}
-                                                </a>
+                                                </button>
                                                 <a class="btn btn-success btn-edit btn-sm mr-2 ml-2" href="{{route('order.edit', ['id' => $order->id])}}">
                                                     <i class="fas fa-edit"></i>
                                                     {{trans('site.edit')}}
@@ -91,36 +142,24 @@
                 </div> <!-- ./card -->
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12">
+
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title">{{trans('site.show_orders')}}</h3>
                     </div> <!-- ./card header -->
                     <div class="card-body">
-                        <table class="table table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Quantity</th>
-                                    <th>Price</th>
-                                </tr>
-                            </thead>
-                            <tbody class="order-list">
-                                <tr>
-                                    <td>name</td>
-                                    <td>1</td>
-                                    <td>110</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="total-price">
-                            <p class="d-inline-block font-weight-bold">Total Price</p> &colon; <span class="total">00</span>
+                        <div class="loading text-center">
+                            <div class="loader"></div>
+                            <p class="p-2">{{trans('site.waiting')}}</p>
                         </div>
-                        <button class="btn btn-primary btn-print" type="submit">
-                            <i class="fas fa-print"></i> Print
-                        </button>
+                        <div class="product-order-list">
+
+                        </div> <!-- /.end of product order list-->
+
 
                     </div> <!-- ./card body -->
-                </div> <!-- ./card -->
+                </div>
+
             </div>
         </div>
 
@@ -140,6 +179,7 @@
 <script src="{{asset('plugins/datatables-buttons/js/buttons.html5.min.js')}}"></script>
 <script src="{{asset('plugins/datatables-buttons/js/buttons.print.min.js')}}"></script>
 <script src="{{asset('plugins/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
+<script src="{{asset("dashboard/js/custom/order.js")}}"></script>
 
 <!-- Page specific script -->
 <script>
