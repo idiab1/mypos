@@ -19,6 +19,14 @@ class OrderController extends Controller
         return view("dashboard.orders.index", compact("orders"));
     }
 
+
+    public function products(Order $order){
+
+        $products = $order->products;
+        return view("dashboard.orders._product", compact("order", "products"));
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *
