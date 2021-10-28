@@ -103,4 +103,36 @@ function totalPrice(){
 }
 
 
+// Show list all products
+// Select on order product button
+let productOrderBtns = document.querySelectorAll(".btn-order-product");
+productOrderBtns.forEach(productOrderBtn => {
+    productOrderBtn.addEventListener("click", (e) => {
 
+        e.preventDefault();
+
+        // get data url
+        let url = productOrderBtn.getAttribute("data-url");
+
+        // get data method
+        let method = productOrderBtn.getAttribute("data-method");
+
+        // Change loading spinner to flex
+        document.querySelector(".loading").style.display = "flex";
+
+        $.ajax({
+            url: url,
+            method: method,
+            success: function (data) {
+
+                // Display none on loading element
+                document.querySelector(".loading").style.display = "none";
+                // Clear data of all elements
+                document.querySelector(".product-order-list").innerHTML = "";
+                // Add order list on html
+                document.querySelector(".product-order-list").insertAdjacentHTML("beforeend", data)
+            }
+        })
+
+    })
+})
