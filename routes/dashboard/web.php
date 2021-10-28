@@ -98,6 +98,8 @@ Route::group(
                 'destroy'   => 'order.destroy',
             ]);
 
+            Route::get("/orders/{order}/products", "OrderController@products")->name("order.products");
+
         }); // End of dashboard routes
 
 
