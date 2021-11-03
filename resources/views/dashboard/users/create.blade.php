@@ -49,12 +49,16 @@
                                 <input class="form-control" type="password" id="password" name="password" placeholder="Password" required>
                             </div>
                             <div class="form-group">
-                                {{-- <label for="supervisors">Supervisors</label> --}}
+                                <label for="supervisors">Privileges</label>
                                 <div class="card card-tabs" id="supervisors">
                                     <div class="card-header p-0 pt-1 border-bottom-0">
                                         <ul class="nav nav-tabs" id="custom-tabs-three-tab" role="tablist">
                                             <li class="nav-item">
-                                                <a class="nav-link font-weight-bold active" id="custom-tabs-three-home-tab" data-toggle="pill" href="#custom-tabs-three-home" role="tab" aria-controls="custom-tabs-three-home" aria-selected="true">Supervisors</a>
+                                                <a class="nav-link active"
+                                                id="custom-tabs-three-home-tab" data-toggle="pill"
+                                                href="#custom-tabs-three-home" role="tab"
+                                                aria-controls="custom-tabs-three-home"
+                                                aria-selected="true">Supervisors</a>
                                             </li>
 
                                         </ul>
@@ -62,10 +66,10 @@
                                     <div class="card-body">
                                         <div class="tab-content" id="custom-tabs-three-tabContent">
                                             <div class="tab-pane fade show active" id="custom-tabs-three-home" role="tabpanel" aria-labelledby="custom-tabs-three-home-tab">
-                                                <label><input type="checkbox" name="permissions[]" value="read_users">Read</label>
-                                                <label><input type="checkbox" name="permissions[]" value="create_users">Create</label>
-                                                <label><input type="checkbox" name="permissions[]" value="update_users">Update</label>
-                                                <label><input type="checkbox" name="permissions[]" value="delete_users">Delete</label>
+                                                <label><input type="checkbox" name="permissions[]" value="read-users">Read</label>
+                                                <label><input type="checkbox" name="permissions[]" value="create-users">Create</label>
+                                                <label><input type="checkbox" name="permissions[]" value="update-users">Update</label>
+                                                <label><input type="checkbox" name="permissions[]" value="delete-users">Delete</label>
                                             </div>
 
                                         </div>
