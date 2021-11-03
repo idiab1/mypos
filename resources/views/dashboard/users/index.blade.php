@@ -60,14 +60,14 @@
                                 <td>{{$user->last_name}}</td>
                                 <td>{{$user->email}}</td>
                                 <td>
-                                    <a class="btn btn-success btn-edit" href="{{route('user.edit', ['id' => $user->id])}}">
+                                    <a class="btn btn-success btn-sm btn-edit" href="{{route('user.edit', ['id' => $user->id])}}">
                                         <i class="fas fa-edit"></i>
                                         Edit
                                     </a>
                                     <form action="{{route('user.destroy', ['id' => $user->id])}}" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="btn btn-danger btn-delete" type="submit">
+                                        <button class="btn btn-danger btn-sm btn-delete" type="submit">
                                             <i class="fas fa-trash"></i>
                                             Delete
                                         </button>
