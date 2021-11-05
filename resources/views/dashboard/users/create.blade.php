@@ -73,7 +73,7 @@
                                         <div class="tab-pane fade show {{$index == 0 ? "active" : ""}}" id="pills-{{$model}}" role="tabpanel" aria-labelledby="pills-{{$model}}-tab">
 
                                             @foreach ($maps as $map)
-                                                <label><input type="checkbox" name="permissions[]" value="{{$map . '-' . $model}}">{{ trans('site.' . $map) }}</label>
+                                                <label><input type="checkbox" name="permissions[]" value="{{$map . '-' . $model}}">{{ trans('site.' . $map) }} </label>
                                             @endforeach
 
                                         </div>
@@ -85,7 +85,7 @@
                         </div>
                     <!-- /.card-body -->
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary">Add</button>
                     </div>
                 </form>
 
