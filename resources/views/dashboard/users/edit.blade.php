@@ -49,10 +49,50 @@
                                 <label for="password">Password</label>
                                 <input class="form-control" type="password" id="password" name="password" placeholder="Password">
                             </div>
+
+                            <div class="form-group">
+                                <label for="supervisors">Privileges</label>
+
+                                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                    @php
+                                        $models = ['users', 'clients', 'categories', 'products', 'orders'];
+                                        $maps = ['create', 'read', 'update', 'delete']
+                                    @endphp
+
+                                    @foreach ($models as $index => $model)
+                                        <li class="nav-item">
+                                            <a class="nav-link {{$index == 0 ? "active" : ""}}"
+                                            id="pills-{{$model}}-tab" data-toggle="pill" href="#pills-{{$model}}" role="tab" aria-controls="pills-{{$model}}">{{ trans('site.' . $model) }}</a>
+                                        </li>
+
+                                    @endforeach
+
+                                </ul>
+                                <div class="tab-content" id="pills-tabContent">
+
+                                    @foreach ($models as $index => $model)
+
+                                        <div class="tab-pane fade show {{$index == 0 ? "active" : ""}}" id="pills-{{$model}}" role="tabpanel" aria-labelledby="pills-{{$model}}-tab">
+
+                                            @foreach ($maps as $map)
+                                                <label>
+                                                    <input type="checkbox" name="permissions[]" {{$user->hasPermission( $map . '-' . $model) ? "checked" : ''}}
+                                                    value="{{$map . '-' . $model}}">{{ trans('site.' . $map) }}
+                                                </label>
+                                            @endforeach
+
+                                        </div>
+                                    @endforeach
+                                </div>
+
+                            </div>
+
+
+
                         </div>
                     <!-- /.card-body -->
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary">Edit</button>
                     </div>
                 </form>
 
