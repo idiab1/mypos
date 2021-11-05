@@ -50,32 +50,41 @@
                             </div>
                             <div class="form-group">
                                 <label for="supervisors">Privileges</label>
-                                <div class="card card-tabs" id="supervisors">
-                                    <div class="card-header p-0 pt-1 border-bottom-0">
-                                        <ul class="nav nav-tabs" id="custom-tabs-three-tab" role="tablist">
-                                            <li class="nav-item">
-                                                <a class="nav-link active"
-                                                id="custom-tabs-three-home-tab" data-toggle="pill"
-                                                href="#custom-tabs-three-home" role="tab"
-                                                aria-controls="custom-tabs-three-home"
-                                                aria-selected="true">Supervisors</a>
-                                            </li>
 
-                                        </ul>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="tab-content" id="custom-tabs-three-tabContent">
-                                            <div class="tab-pane fade show active" id="custom-tabs-three-home" role="tabpanel" aria-labelledby="custom-tabs-three-home-tab">
-                                                <label><input type="checkbox" name="permissions[]" value="read-users">Read</label>
-                                                <label><input type="checkbox" name="permissions[]" value="create-users">Create</label>
-                                                <label><input type="checkbox" name="permissions[]" value="update-users">Update</label>
-                                                <label><input type="checkbox" name="permissions[]" value="delete-users">Delete</label>
-                                            </div>
 
+                                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                    @php
+                                        $models = ['users', 'clients', 'categories', 'products', 'orders'];
+                                        $maps = ['create', 'read', 'update', 'delete']
+                                    @endphp
+
+                                    @foreach ($models as $index => $model)
+                                        <li class="nav-item">
+                                            <a class="nav-link {{$index == 0 ? "active" : ""}}"
+                                            id="pills-{{$model}}-tab" data-toggle="pill" href="#pills-{{$model}}" role="tab" aria-controls="pills-{{$model}}">{{ trans('site.' . $model) }}</a>
+                                        </li>
+
+                                    @endforeach
+
+                                </ul>
+                                <div class="tab-content" id="pills-tabContent">
+
+                                    @foreach ($models as $index => $model)
+
+                                        <div class="tab-pane fade show {{$index == 0 ? "active" : ""}}" id="pills-{{$model}}" role="tabpanel" aria-labelledby="pills-{{$model}}-tab">
+
+                                            @foreach ($maps as $map)
+                                                <label><input type="checkbox" name="permissions[]" value="{{$map . '-' . $model}}">{{ trans('site.' . $map) }}</label>
+                                            @endforeach
+
+                                                    {{-- <label><input type="checkbox" name="permissions[]" value="create-{{$model}}">Create</label>
+                                                    <label><input type="checkbox" name="permissions[]" value="read-{{$model}}">Read</label>
+                                                    <label><input type="checkbox" name="permissions[]" value="update-{{$model}}">Update</label>
+                                                    <label><input type="checkbox" name="permissions[]" value="delete-{{$model}}">Delete</label> --}}
                                         </div>
-                                    </div>
-                                <!-- /.card -->
+                                    @endforeach
                                 </div>
+
 
                             </div>
 
