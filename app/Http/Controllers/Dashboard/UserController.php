@@ -40,49 +40,26 @@ class UserController extends Controller
     public function store(Request $request)
     {
         // dd($request);
-        // Validate On Data coming fro users form
+        // Validate On Data coming from request
         $request->validate([
             'first_name'    => 'required|string',
             'last_name'     => 'required|string',
             'email'         => 'required|email',
             'password'      => 'required|min:8',
-            // 'permissions'   => 'required|min:1'
         ]);
 
-        $request_data = $request->except(['permissions']);
+        $request_data = $request->except(['password', 'permissions']);
         $request_data['password'] = Hash::make($request->password);
 
         // Create New Object from user class
         $user = User::create($request_data);
-        // $user->attachRole('admin');
-        // $user->attachPermissions($request->permissions);
-        // $user->syncPermissions($request->permissions);
-
-
-
-        // $user->save();
+        $user->attachRole('admin');
+        $user->syncPermissions($request->permissions);
 
         // Create Session
         session()->flash('success', 'User of created');
         return redirect()->back();
 
-        /*
-        // $request_data
-
-        // Create New Object from user class
-        $user = new User();
-        $user->first_name   = $request->first_name;
-        $user->last_name    = $request->last_name;
-        $user->email        = $request->email;
-        $user->password     = Hash::make($request->password);
-
-        $user->save();
-
-        $user->attachRole('admin');
-        $user->syncPermissions($request->permissions);
-
-        // Save data in users table*/
-        // return redirect()->route('user.create')->with('success', 'User of created');
     }
 
 
