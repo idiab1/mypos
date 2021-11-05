@@ -90,23 +90,18 @@ class UserController extends Controller
             'first_name'    => 'required|string',
             'last_name'     => 'required|string',
             'email'         => 'required|email',
-            'password'      => 'required|min:8'
         ]);
+
+
+        $request_data = $request->except(['password', 'permissions']);
 
         // Select user using id
         $user = User::find($id);
-        $user->first_name = $request->first_name;
-        $user->last_name = $request->last_name;
-        $user->email = $request->email;
-        // $user->password     = Hash::make($request->password);
-        // Save data in users table
-        $user->save();
 
-        if ($request->has('password')) {
-            $user->password     = Hash::make($request->password);
-            // Save data in users table
-            $user->save();
-        }
+        // Update data of user
+        $user->update($request_data);
+
+        $user->syncPermissions($request->permissions);
 
         return redirect()->route('users.index')->with('success', 'User of updated data');
     }
@@ -121,6 +116,6 @@ class UserController extends Controller
     {
         $user = User::find($id);
         $user->delete();
-        return redirect(route('users.index'))->with('success', 'User is deleted');
+        return redirect()->route('users.index')->with('success', 'User is deleted');
     }
 }
