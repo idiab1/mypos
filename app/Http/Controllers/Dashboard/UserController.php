@@ -58,7 +58,7 @@ class UserController extends Controller
 
         // Create Session
         session()->flash('success', 'User of created');
-        return redirect()->back();
+        return redirect()->route('users.index');
 
     }
 
@@ -108,7 +108,7 @@ class UserController extends Controller
             $user->save();
         }
 
-        return redirect(route('users.index'))->with('success', 'User of updated data');
+        return redirect()->route('users.index')->with('success', 'User of updated data');
     }
 
     /**
