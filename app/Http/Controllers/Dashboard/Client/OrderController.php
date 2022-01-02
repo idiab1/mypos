@@ -76,19 +76,10 @@ class OrderController extends Controller
         ]);
 
 
-        return redirect()->back();
+        return redirect()->route("orders.index");
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+
 
     /**
      * Show the form for editing the specified resource.
