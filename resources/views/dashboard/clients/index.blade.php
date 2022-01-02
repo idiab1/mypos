@@ -65,7 +65,13 @@
                                     <td>{{$client->name}}</td>
                                     <td>{{implode(array_filter($client->phone), '-')}}</td>
                                     <td>{{$client->address}}</td>
-                                    <td><a class="btn btn-primary btn-sm btn-add-order" href="{{route('clients.orders.create', ['id' => $client->id])}}">{{trans('site.add_order')}}</a></td>
+                                    <!-- Add Orders -->
+                                    <td>
+                                        <a class="btn btn-primary btn-sm btn-add-order"
+                                        href="{{route('clients.orders.create', ['id' => $client->id])}}">
+                                        {{trans('site.add_order')}}
+                                        </a>
+                                    </td>
                                     <td>
                                         <a class="btn btn-success btn-edit btn-sm" href="{{route('client.edit', ['id' => $client->id])}}">
                                             <i class="fas fa-edit"></i>
