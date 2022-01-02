@@ -13,6 +13,7 @@ productAddBtns.forEach(productAddBtn => {
         // Select on order list element
         const orderList = document.querySelector(".order-list")
 
+        // Create New row
         let row =
         `<tr>
             <td>${name}</td>
@@ -26,6 +27,8 @@ productAddBtns.forEach(productAddBtn => {
         </tr>`;
 
         productAddBtn.classList.remove("btn-primary")
+
+        // For Disabled this button
         productAddBtn.classList.add("btn-default")
         productAddBtn.classList.add("disabled")
 
