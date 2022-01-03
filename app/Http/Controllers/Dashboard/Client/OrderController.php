@@ -45,38 +45,7 @@ class OrderController extends Controller
     {
         $client = Client::find($id);
 
-        // Validate on all request
-        $request->validate([
-            'products' => 'required|array',
-        ]);
-
-        $order = $client->orders()->create([]);
-
-        $order->products()->attach($request->products);
-
-        $total_price = 0;
-
-        // // Loop on all quantities exist in request
-        foreach($request->products as $key=>$quantity){
-
-            $product = Product::FindOrFail($key);
-
-            // Calculate total price
-            $total_price += (float)$product->sale_price * (int)$quantity["quantity"];
-
-            // remove quantity of product already ordered from stock
-            $product->update([
-                "stock" => $product->stock - $quantity["quantity"]
-            ]);
-
-        }
-
-        // Update total price
-        $order->update([
-            "total_price" => $total_price
-        ]);
-
-
+        $this->attach_order($request, $client);
 
         return redirect()->route("orders.index");
     }
@@ -115,18 +84,64 @@ class OrderController extends Controller
      */
     public function update(Request $request, $client, $order)
     {
-        //
-        dd($request);
+        $client = Client::find($client);
+
+        $order = Order::find($order);
+
+        $this->detach_order($order);
+
+        $this->attach_order($request, $client);
+
+        return redirect()->route("orders.index");
+
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+
+    private function attach_order($request, $client){
+        // Validate on all request
+        $request->validate([
+            'products' => 'required|array',
+        ]);
+
+        $order = $client->orders()->create([]);
+
+        $order->products()->attach($request->products);
+
+        $total_price = 0;
+
+        // // Loop on all quantities exist in request
+        foreach($request->products as $key=>$quantity){
+
+            $product = Product::FindOrFail($key);
+
+            // Calculate total price
+            $total_price += (float)$product->sale_price * (int)$quantity["quantity"];
+
+            // remove quantity of product already ordered from stock
+            $product->update([
+                "stock" => $product->stock - $quantity["quantity"]
+            ]);
+
+        }
+
+        // Update total price
+        $order->update([
+            "total_price" => $total_price
+        ]);
     }
+
+    private function detach_order($order){
+
+        foreach ($order->products as $product){
+
+            // Update stock of product
+            $product->update([
+                'stock' => $product->stock + $product->pivot->quantity
+            ]);
+
+        } // End of for each
+
+        $order->delete();
+    }
+
 }
