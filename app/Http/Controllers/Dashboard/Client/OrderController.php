@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Dashboard\Client;
 use App\Category;
 use App\Client;
 use App\Http\Controllers\Controller;
+use App\Order;
 use App\Product;
 use Illuminate\Http\Request;
 
@@ -76,6 +77,7 @@ class OrderController extends Controller
         ]);
 
 
+
         return redirect()->route("orders.index");
     }
 
@@ -87,9 +89,21 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($client, $order)
     {
-        //
+        // Get data of client
+        $client = Client::find($client);
+
+        // Get data of client
+        $order = Order::find($order);
+
+        // Get products
+        $products = $order->products;
+
+        $categories = Category::with('products')->get();
+        $orders = $client->orders()->with('products')->paginate(5);
+
+        return view('dashboard.clients.orders.edit', compact('client', 'order', 'products', 'categories', 'orders'));
     }
 
     /**
@@ -99,9 +113,10 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $client, $order)
     {
         //
+        dd($request);
     }
 
     /**
