@@ -110,7 +110,7 @@
                                                     <i class="fas fa-list"></i>
                                                     {{trans('site.show')}}
                                                 </button>
-                                                <a class="btn btn-success btn-edit btn-sm mr-2 ml-2" href="{{route('order.edit', ['id' => $order->id])}}">
+                                                <a class="btn btn-success btn-edit btn-sm mr-2 ml-2" href="{{route('clients.orders.edit', ['client' => $order->client->id, 'order' => $order->id])}}">
                                                     <i class="fas fa-edit"></i>
                                                     {{trans('site.edit')}}
                                                 </a>
