@@ -13,15 +13,6 @@ use function PHPSTORM_META\type;
 
 class OrderController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
 
     /**
      * Show the form for creating a new resource.
@@ -49,8 +40,6 @@ class OrderController extends Controller
 
         return redirect()->route("orders.index");
     }
-
-
 
     /**
      * Show the form for editing the specified resource.
