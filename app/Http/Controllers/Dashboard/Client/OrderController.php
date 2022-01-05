@@ -98,7 +98,7 @@ class OrderController extends Controller
 
         $total_price = 0;
 
-        // // Loop on all quantities exist in request
+        // Loop on all quantities exist in request
         foreach($request->products as $key=>$quantity){
 
             $product = Product::FindOrFail($key);

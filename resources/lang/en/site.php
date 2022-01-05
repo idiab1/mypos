@@ -53,6 +53,7 @@ return [
     'show_orders'           => 'Show Orders',
     'edit_order'            => 'Edit Order',
     'add_order'             => 'Add Order',
+    'previous_orders'       => 'Previous Orders',
 
     // Facades
     'home'              => 'Home',
