@@ -120,6 +120,16 @@
                     </div>
                     <!-- /.card-body -->
                 </div>
+
+                <div class="card card-previous-orders card-outline card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">{{trans('site.previous_orders')}}</h3>
+                    </div>
+                    <div class="card-body">
+
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
