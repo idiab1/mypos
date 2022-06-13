@@ -17,7 +17,10 @@ productAddBtns.forEach(productAddBtn => {
         let row =
         `<tr>
             <td>${name}</td>
-            <td><input class="form-control product-quantity" type="number" name="products[${id}][quantity]" data-price="${price}" value="1" min="1"></td>
+            <td>
+                <input class="form-control product-quantity" type="number"
+                name="products[${id}][quantity]" data-price="${price}" value="1" min="1">
+            </td>
             <td class="product-price">${price}</td>
             <td>
                 <button class="btn btn-danger btn-sm btn-product-remove" href="#" data-id="${id}">
