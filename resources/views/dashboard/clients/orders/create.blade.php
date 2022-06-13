@@ -30,11 +30,18 @@
 
                         @if ($categories->count() > 0)
                             @foreach ($categories as $category)
+
+
                                 <table class="table table-hover">
                                     <tbody>
                                         <tr data-widget="expandable-table" aria-expanded="false">
                                             <td class="bg-primary">
                                                 <h5>{{$category->name}}</h5>
+                                            </td>
+                                            <td class="bg-primary text-right">
+                                                <span class="badge badge-warning">
+                                                    {{$category->products->count()}}
+                                                </span>
                                             </td>
                                         </tr>
                                         <tr class="expandable-body">
@@ -121,7 +128,7 @@
                 </div>
 
                 <!-- Previous Order -->
-                <div class="card card-previous-orders card-outline card-primary">
+                {{-- <div class="card card-previous-orders card-outline card-primary">
                     <div class="card-header">
                         <h3 class="card-title">{{trans('site.previous_orders')}}</h3>
                     </div>
@@ -172,7 +179,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
 
 
 
