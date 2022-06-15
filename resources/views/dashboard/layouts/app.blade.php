@@ -14,6 +14,8 @@
         <!-- Theme style -->
         <link rel="stylesheet" href="{{asset('dashboard/css/adminlte.min.css')}}">
 
+        <!-- Styles -->
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
         {{-- Styles --}}
         @yield('styles')
