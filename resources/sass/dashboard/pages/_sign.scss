@@ -1,0 +1,68 @@
+// Sign page
+.sign-page{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(
+        to right,
+        $light-teal 0%,
+        $light-teal 44.5%,
+        #fff 44%,
+        #fff 100%);
+    .sign-content{
+        box-shadow: 0px 0 10px 0 rgb(0 0 0 / 23%);
+        background: linear-gradient(
+        to right,
+        $light-teal 0%,
+        $light-teal 44.5%,
+        #fff 44%,
+        #fff 100%);
+
+        // card
+        .card{
+            border: none;
+            @include prefixer(border-radius, 0, webkit moz ms o);
+            // Sign info
+            &.sign-info{
+                height: 100%;
+                background-color: transparent;
+                .card-body{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+            // Sign form
+            &.sign-form{
+                .card-header{
+                    border-bottom: none;
+                    background-color: transparent;
+                    h4{
+                        margin: 0;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                    }
+                }
+
+                .card-body{
+                    form{
+                        label{
+                            font-weight: 600;
+                            font-size: .75rem;
+                            letter-spacing: .06rem;
+                            line-height: 1.7;
+                        }
+                        input{
+
+                            &:focus{
+                                border-color: $light-teal;
+                                box-shadow: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
