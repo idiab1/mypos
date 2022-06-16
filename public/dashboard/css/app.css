@@ -1,5 +1,61 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
+/* Prefixer */
+
+/* End of Prefixer */
+
+.sign-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #98DED9 0%, #98DED9 44.5%, #fff 44%, #fff 100%);
+}
+
+.sign-page .sign-content {
+  box-shadow: 0px 0 10px 0 rgba(0, 0, 0, 0.23);
+  background: linear-gradient(to right, #98DED9 0%, #98DED9 44.5%, #fff 44%, #fff 100%);
+}
+
+.sign-page .sign-content .card {
+  border: none;
+  border-radius: 0;
+}
+
+.sign-page .sign-content .card.sign-info {
+  height: 100%;
+  background-color: transparent;
+}
+
+.sign-page .sign-content .card.sign-info .card-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign-page .sign-content .card.sign-form .card-header {
+  border-bottom: none;
+  background-color: transparent;
+}
+
+.sign-page .sign-content .card.sign-form .card-header h4 {
+  margin: 0;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.sign-page .sign-content .card.sign-form .card-body form label {
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.06rem;
+  line-height: 1.7;
+}
+
+.sign-page .sign-content .card.sign-form .card-body form input:focus {
+  border-color: #98DED9;
+  box-shadow: none;
+}
+
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
