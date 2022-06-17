@@ -16,7 +16,7 @@
                             <!-- Sign info -->
                             <div class="card sign-info">
                                 <div class="card-body">
-                                    <h3 class="m-0">Logo</h3>
+                                    <h3 class="m-0">MyPos</h3>
                                 </div>
                             </div>
                             <!-- End of Sign info -->
