@@ -1,0 +1,30 @@
+/* Crayons button */
+.btn-crayons{
+    color: $light-teal;
+    border-color: $navy-color;
+    background-color: $navy-color;
+    &:focus{
+        box-shadow: 0;
+        color: $light-teal;
+        border-color: $navy-color;
+        background-color: $navy-color;
+    }
+    &:hover{
+        color: $light-teal;
+        border-color: $navy-color;
+        background-color: $navy-color;
+    }
+}
+
+
+/* End of crayons button */
+
+/* Login button */
+.btn-login{
+    width: 100%;
+    font-weight: 600;
+    letter-spacing: .06rem;
+
+}
+
+/* End of Login button */
