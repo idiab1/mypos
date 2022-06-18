@@ -60,11 +60,11 @@
                                 <td>{{$user->last_name}}</td>
                                 <td>{{$user->email}}</td>
                                 <td>
-                                    <a class="btn btn-success btn-sm btn-edit" href="{{route('user.edit', ['id' => $user->id])}}">
+                                    <a class="btn btn-success d-inline-block btn-sm btn-edit" href="{{route('user.edit', ['id' => $user->id])}}">
                                         <i class="fas fa-edit"></i>
                                         Edit
                                     </a>
-                                    <form action="{{route('user.destroy', ['id' => $user->id])}}" method="POST">
+                                    <form class="d-inline-block" action="{{route('user.destroy', ['id' => $user->id])}}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button class="btn btn-danger btn-sm btn-delete" type="submit">
@@ -116,7 +116,7 @@
             "responsive": true,
             "lengthChange": false,
             "autoWidth": false,
-            "buttons": ["copy", "csv", "excel", "pdf", "print"]
+            "buttons": ["csv", "excel"]
         }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
 
     });
