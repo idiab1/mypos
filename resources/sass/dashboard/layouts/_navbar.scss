@@ -1,0 +1,37 @@
+/* Navbar */
+.navbar{
+    .navbar-nav{
+        .nav-item{
+            .nav-link{
+                text-transform: capitalize;
+                i{
+                    color: $navy-color;
+                }
+            }
+            // Dropdown
+            &.dropdown{
+                // Profile dropdown
+                &.profile-dropdown{
+                    // Dropdown toggle
+                    .dropdown-toggle{
+                        color: $navy-color;
+                        font-weight: 500;
+                    }
+                }
+                // Dropdown menu
+                .dropdown-menu{
+                    .dropdown-item{
+                        @include prefixer(transition, all .25s ease-in, webkit mox ms o);
+                        &:hover{
+                            color: $navy-color;
+                            background-color: $light-teal;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+/* End of Navbar */
