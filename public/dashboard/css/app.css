@@ -10979,6 +10979,93 @@ a.text-dark:focus {
 
 /* End of Login button */
 
+/* Main Sidebar */
+
+.main-sidebar {
+  background-color: #98DED9;
+  box-shadow: 2px 0px 5px 0 rgba(0, 0, 0, 0.25);
+}
+
+.main-sidebar .brand-link {
+  text-align: center;
+  padding: 0.8125rem 0.25rem;
+  border-bottom: 1px solid rgba(22, 29, 111, 0.16);
+}
+
+.main-sidebar .brand-link span {
+  color: #161D6F;
+}
+
+.main-sidebar .user-panel {
+  justify-content: center;
+  color: #161D6F;
+  border-bottom: 1px solid rgba(22, 29, 111, 0.16);
+}
+
+.main-sidebar .user-panel .info a {
+  color: #161D6F;
+  text-transform: capitalize;
+}
+
+.main-sidebar input {
+  color: #161D6F !important;
+  background-color: #98DED9 !important;
+  border: 1px solid rgba(22, 29, 111, 0.16) !important;
+}
+
+.main-sidebar input:focus {
+  box-shadow: none;
+  background-color: #98DED9;
+}
+
+.main-sidebar .input-group-append .btn-sidebar {
+  color: #161D6F;
+  border: 1px solid rgba(22, 29, 111, 0.16);
+  background-color: transparent !important;
+}
+
+.main-sidebar .input-group-append .btn-sidebar:hover {
+  color: #161D6F;
+}
+
+.main-sidebar .nav-sidebar .nav-item .nav-link {
+  color: #161D6F;
+}
+
+.main-sidebar .nav-sidebar .nav-item .nav-link:hover {
+  color: #161D6F;
+  background-color: rgba(255, 255, 255, 0.37);
+}
+
+/* End of Main Sidebar */
+
+/* Navbar */
+
+.navbar .navbar-nav .nav-item .nav-link {
+  text-transform: capitalize;
+}
+
+.navbar .navbar-nav .nav-item .nav-link i {
+  color: #161D6F;
+}
+
+.navbar .navbar-nav .nav-item.dropdown.profile-dropdown .dropdown-toggle {
+  color: #161D6F;
+  font-weight: 500;
+}
+
+.navbar .navbar-nav .nav-item.dropdown .dropdown-menu .dropdown-item {
+  -mox-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in;
+}
+
+.navbar .navbar-nav .nav-item.dropdown .dropdown-menu .dropdown-item:hover {
+  color: #161D6F;
+  background-color: #98DED9;
+}
+
+/* End of Navbar */
+
 .sign-page {
   height: 100vh;
   display: flex;
