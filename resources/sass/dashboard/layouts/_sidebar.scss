@@ -1,0 +1,64 @@
+/* Main Sidebar */
+.main-sidebar{
+    background-color: $light-teal;
+    box-shadow: 2px 0px 5px 0 rgb(0 0 0 / 25%);
+    // Barnd link
+    .brand-link{
+        text-align: center;
+        padding: 0.8125rem 0.25rem;
+        border-bottom: 1px solid rgb(22 29 111 / 16%);
+        span{
+            color: $navy-color;
+
+        }
+    }
+    // User panel
+    .user-panel {
+        justify-content: center;
+        color: $navy-color;
+        border-bottom: 1px solid rgb(22 29 111 / 16%);
+        .info{
+            a{
+                color: $navy-color;
+                text-transform: capitalize;
+            }
+        }
+    }
+
+    input{
+        color: $navy-color !important;
+        background-color: $light-teal !important;
+        border: 1px solid rgb(22 29 111 / 16%) !important;
+        &:focus{
+            box-shadow: none;
+            background-color: $light-teal;
+        }
+    }
+    .input-group-append {
+
+        .btn-sidebar{
+            color: $navy-color;
+            border: 1px solid rgb(22 29 111 / 16%);
+            background-color: transparent !important;
+            &:hover{
+                color: $navy-color;
+            }
+        }
+    }
+
+    // Nav sidebar
+    .nav-sidebar{
+        .nav-item{
+            .nav-link{
+                color: $navy-color;
+                &:hover{
+                    color: $navy-color;
+                    background-color: rgb(255 255 255 / 37%);
+                }
+            }
+        }
+    }
+
+}
+
+/* End of Main Sidebar */
