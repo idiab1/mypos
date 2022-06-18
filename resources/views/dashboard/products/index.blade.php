@@ -48,9 +48,9 @@
                         <tr>
                             <th>#</th>
                             <th>{{trans('site.name')}}</th>
-                            <th>{{trans('site.category')}}</th>
-                            <th>{{trans('site.description')}}</th>
-                            <th>{{trans('site.image')}}</th>
+                            {{-- <th>{{trans('site.category')}}</th> --}}
+                            {{-- <th>{{trans('site.description')}}</th>
+                            <th>{{trans('site.image')}}</th> --}}
                             <th>{{trans('site.purchase_price')}}</th>
                             <th>{{trans('site.sale_price')}}</th>
                             <th>{{trans('site.profit_percent')}}</th>
@@ -67,22 +67,22 @@
                                 <tr>
                                     <td>{{$id++}}</td>
                                     <td>{{$product->name}}</td>
-                                    <td>{{$product->category->name}}</td>
-                                    <td>{{$product->description}}</td>
-                                    <td><img class="img-thumbnail" src="{{$product->image_path}}" style="width: 60px; height:60px" alt="" /></td>
+                                    {{-- <td>{{$product->category->name}}</td> --}}
+                                    {{-- <td>{{$product->description}}</td>
+                                    <td><img class="img-thumbnail" src="{{$product->image_path}}" style="width: 60px; height:60px" alt="" /></td> --}}
                                     <td>{{$product->purchase_price}}</td>
                                     <td>{{$product->sale_price}}</td>
                                     <td>{{$product->profit_percent}} %</td>
                                     <td>{{$product->stock}}</td>
                                     <td>
-                                        <a class="btn btn-success btn-edit" href="{{route('product.edit', ['id' => $product->id])}}">
+                                        <a class="btn btn-success d-inline-block btn-edit btn-sm" href="{{route('product.edit', ['id' => $product->id])}}">
                                             <i class="fas fa-edit"></i>
                                             {{trans('site.edit')}}
                                         </a>
-                                        <form action="{{route('product.destroy', ['id' => $product->id])}}" method="POST">
+                                        <form class="d-inline-block" action="{{route('product.destroy', ['id' => $product->id])}}" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <button class="btn btn-danger btn-delete" type="submit">
+                                            <button class="btn btn-danger btn-delete btn-sm" type="submit">
                                                 <i class="fas fa-trash"></i>
                                                 {{trans('site.delete')}}
                                             </button>
@@ -98,9 +98,9 @@
                         <tr>
                             <th>#</th>
                             <th>{{trans('site.name')}}</th>
-                            <th>{{trans('site.category')}}</th>
-                            <th>{{trans('site.description')}}</th>
-                            <th>{{trans('site.image')}}</th>
+                            {{-- <th>{{trans('site.category')}}</th> --}}
+                            {{-- <th>{{trans('site.description')}}</th>
+                            <th>{{trans('site.image')}}</th> --}}
                             <th>{{trans('site.purchase_price')}}</th>
                             <th>{{trans('site.sale_price')}}</th>
                             <th>{{trans('site.profit_percent')}}</th>
@@ -138,7 +138,7 @@
             "responsive": true,
             "lengthChange": false,
             "autoWidth": false,
-            "buttons": ["copy", "csv", "excel", "pdf", "print"]
+            "buttons": ["csv", "excel", "print"]
         }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
 
     });

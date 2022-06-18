@@ -63,11 +63,11 @@
                                     <td>{{$category->name}}</td>
                                     <td>{{$category->products->count()}}</td>
                                     <td>
-                                        <a class="btn btn-success btn-edit btn-sm" href="{{route('category.edit', ['id' => $category->id])}}">
+                                        <a class="btn btn-success d-inline-block btn-edit btn-sm" href="{{route('category.edit', ['id' => $category->id])}}">
                                             <i class="fas fa-edit"></i>
                                             {{trans('site.edit')}}
                                         </a>
-                                        <form action="{{route('category.destroy', ['id' => $category->id])}}" method="POST">
+                                        <form class="d-inline-block" action="{{route('category.destroy', ['id' => $category->id])}}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn btn-danger btn-delete btn-sm" type="submit">
@@ -120,7 +120,7 @@
             "responsive": true,
             "lengthChange": false,
             "autoWidth": false,
-            "buttons": ["copy", "csv", "excel", "pdf", "print"]
+            "buttons": ["csv", "excel", "print"]
         }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
 
     });
