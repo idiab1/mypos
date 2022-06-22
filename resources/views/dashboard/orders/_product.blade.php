@@ -23,13 +23,15 @@
     </table>
 
     <div class="total-price">
-        <p class="d-inline-block font-weight-bold">Total Price</p> &colon;
-        <span class="total">
-            {{$order->total_price}}
-        </span>
+        <div class="info">
+            <p class="d-inline-block font-weight-bold">Total Price</p> &colon;
+            <span class="total">
+                {{$order->total_price}}
+            </span>
+        </div>
+        <button class="btn btn-primary btn-crayons btn-print" type="submit">
+            <i class="fas fa-print"></i> Print
+        </button>
     </div>
-    <button class="btn btn-primary btn-print" type="submit">
-        <i class="fas fa-print"></i> Print
-    </button>
 
 </div>

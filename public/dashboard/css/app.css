@@ -11116,6 +11116,12 @@ a.text-dark:focus {
   color: #161D6F;
 }
 
+.section .card .card-body .total-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 /* End of Tables */
 
 /* Content header */
