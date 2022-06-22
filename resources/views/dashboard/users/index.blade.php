@@ -35,8 +35,8 @@
                     <div class="col-sm-8">
                         <h3 class="card-title">List of All Users</h3>
                     </div>
-                    <div class="col-sm-4 float-sm-right">
-                        <a class="btn btn-primary btn-add-new" href="{{route('user.create')}}">
+                    <div class="col-sm-4">
+                        <a class="btn btn-primary btn-crayons btn-add-new float-right" href="{{route('user.create')}}">
                             <i class="fas fa-plus"></i> Add New User
                         </a>
                     </div>

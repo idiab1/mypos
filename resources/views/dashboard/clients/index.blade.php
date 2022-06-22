@@ -34,8 +34,8 @@
                     <div class="col-sm-8">
                         <h3 class="card-title">{{trans('site.all_list_clients')}}</h3>
                     </div>
-                    <div class="col-sm-4 float-sm-right">
-                        <a class="btn btn-primary btn-add-new" href="{{route('client.create')}}">
+                    <div class="col-sm-4">
+                        <a class="btn btn-primary btn-crayons btn-add-new float-right" href="{{route('client.create')}}">
                             <i class="fas fa-plus"></i> {{trans('site.add_new_client')}}
                         </a>
                     </div>
