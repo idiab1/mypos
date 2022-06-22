@@ -1,11 +1,24 @@
 /* Content header */
 .content-header{
+    padding: 1.2rem 0.5rem;
     .page-heading{
-        font-weight: 600;
-
+        font-weight: 700;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        letter-spacing: .07rem;
+        line-height: 1.4;
     }
     /* Breadcrumb */
-
+    .breadcrumb{
+        text-transform: capitalize;
+        .breadcrumb-item{
+            a{
+                color: $navy-color;
+                font-weight: 600;
+                text-decoration: none;
+            }
+        }
+    }
     /* End of Breadcrumb */
 }
 

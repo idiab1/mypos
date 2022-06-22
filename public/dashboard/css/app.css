@@ -10986,12 +10986,27 @@ a.text-dark:focus {
 /* Content header */
 
 .content-header {
+  padding: 1.2rem 0.5rem;
   /* Breadcrumb */
   /* End of Breadcrumb */
 }
 
 .content-header .page-heading {
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07rem;
+  line-height: 1.4;
+}
+
+.content-header .breadcrumb {
+  text-transform: capitalize;
+}
+
+.content-header .breadcrumb .breadcrumb-item a {
+  color: #161D6F;
   font-weight: 600;
+  text-decoration: none;
 }
 
 /* End of Content header */
