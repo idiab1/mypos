@@ -11047,6 +11047,30 @@ a.text-dark:focus {
 
 /* End of Button danger */
 
+/* Button danger */
+
+.btn-show {
+  margin-left: 5px;
+  color: #98DED9;
+  border-color: #161D6F;
+  background-color: #161D6F;
+}
+
+.btn-show:focus {
+  box-shadow: none;
+  color: #98DED9;
+  border-color: #161D6F;
+  background-color: #161D6F;
+}
+
+.btn-show:hover {
+  color: #98DED9;
+  border-color: #161D6F;
+  background-color: #161D6F;
+}
+
+/* End of Button danger */
+
 .btn {
   box-shadow: none;
 }
