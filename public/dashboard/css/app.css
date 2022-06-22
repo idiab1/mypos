@@ -11090,6 +11090,11 @@ a.text-dark:focus {
   color: #161D6F;
 }
 
+.section .card .card-header h3 .badge-secondary {
+  color: #98DED9;
+  background-color: #161D6F;
+}
+
 .section .card .card-body div.dataTables_wrapper div.dataTables_paginate ul.pagination {
   margin-top: 15px;
 }
