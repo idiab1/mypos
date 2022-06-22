@@ -83,6 +83,26 @@
 }
 /* End of Button danger */
 
+/* Button danger */
+.btn-show{
+    margin-left: 5px;
+    color: $light-teal;
+    border-color: $navy-color;
+    background-color: $navy-color;
+    &:focus{
+        box-shadow: none;
+        color: $light-teal;
+        border-color: $navy-color;
+        background-color: $navy-color;
+    }
+    &:hover{
+        color: $light-teal;
+        border-color: $navy-color;
+        background-color: $navy-color;
+    }
+}
+/* End of Button danger */
+
 .btn{
     box-shadow: none;
     i{
