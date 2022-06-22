@@ -10979,7 +10979,113 @@ a.text-dark:focus {
 
 /* End of Login button */
 
+/* Button Group */
+
+.btn-group {
+  margin-bottom: 0.7rem;
+}
+
+.btn-group .btn-secondary {
+  color: #fcfcfc;
+  background-color: rgba(22, 29, 111, 0.61);
+  border-color: #161D6F;
+}
+
+.btn-group .btn-secondary:focus {
+  color: #fcfcfc;
+  box-shadow: none;
+  background-color: rgba(22, 29, 111, 0.61);
+}
+
+/* End of Button Group */
+
+/* Button edit */
+
+.btn-edit {
+  margin-right: 5px;
+  color: #161D6F;
+  border-color: #98DED9;
+  background-color: #98DED9;
+}
+
+.btn-edit:focus {
+  box-shadow: 0;
+  color: #161D6F;
+  border-color: #98DED9;
+  background-color: #98DED9;
+}
+
+.btn-edit:hover {
+  color: #161D6F;
+  border-color: #98DED9;
+  background-color: #98DED9;
+}
+
+/* End of Button edit */
+
+/* Button danger */
+
+.btn-danger {
+  margin-left: 5px;
+  color: #161D6F;
+  border-color: #e83e8c;
+  background-color: #e83e8c;
+}
+
+.btn-danger:focus {
+  box-shadow: none;
+  color: #161D6F;
+  border-color: #e83e8c;
+  background-color: #e83e8c;
+}
+
+.btn-danger:hover {
+  color: #161D6F;
+  border-color: #e83e8c;
+  background-color: #e83e8c;
+}
+
+/* End of Button danger */
+
+.btn {
+  box-shadow: none;
+}
+
+.btn i {
+  padding-right: 5px;
+}
+
 /* Tables */
+
+.section .card .card-header {
+  background-color: transparent;
+}
+
+.section .card .card-header h3 {
+  margin-bottom: 0;
+  color: #161D6F;
+}
+
+.section .card .card-body div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+  margin-top: 15px;
+}
+
+.section .card .card-body .page-item.active .page-link {
+  color: #98DED9;
+  border-color: #161D6F;
+  background-color: #161D6F;
+}
+
+.section .card .card-body .page-item.active .page-link:focus {
+  box-shadow: 0;
+  color: #98DED9;
+  border-color: #161D6F;
+  background-color: #161D6F;
+}
+
+.section .card .card-body div.dataTables_wrapper div.dataTables_info {
+  color: #161D6F;
+}
 
 /* End of Tables */
 
@@ -10997,6 +11103,7 @@ a.text-dark:focus {
   text-transform: uppercase;
   letter-spacing: 0.07rem;
   line-height: 1.4;
+  color: #161D6F;
 }
 
 .content-header .breadcrumb {
