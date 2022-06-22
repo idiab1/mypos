@@ -103,7 +103,7 @@
                                             <td>{{$order->total_price}}</td>
                                             <td>{{$order->created_at->toFormattedDateString()}}</td>
                                             <td>
-                                                <button class="btn btn-primary btn-order-product btn-sm"
+                                                <button class="btn btn-primary btn-order-product btn-show btn-sm"
                                                     data-url="{{route("order.products", ["order" => $order->id])}}"
                                                     data-method="get"
                                                 >
