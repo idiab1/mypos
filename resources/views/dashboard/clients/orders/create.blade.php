@@ -18,10 +18,10 @@
 
 {{-- Content --}}
 @section('content')
-    <div class="clients-form-page">
+    <section class="clients-form-page section">
         <div class="row">
             <div class="col-md-6">
-                <div class="card card-categories card-outline card-primary">
+                <div class="card card-categories">
                     <div class="card-header">
                         <h3 class="card-title">{{trans('site.categories')}}</h3>
                     </div>
@@ -97,7 +97,7 @@
             </div>
 
             <div class="col-md-6">
-                <div class="card card-orders card-outline card-primary">
+                <div class="card card-orders">
                     <div class="card-header">
                         <h3 class="card-title">{{trans('site.orders')}}</h3>
                     </div>
@@ -120,7 +120,7 @@
                             <div class="total-price">
                                 <p class="d-inline-block font-weight-bold">Total Price</p> &colon; <span class="total">00</span>
                             </div>
-                            <button class="btn btn-primary disabled btn-add-order" type="submit">Add Order</button>
+                            <button class="btn btn-primary disabled btn-crayons btn-add-order" type="submit">Add Order</button>
 
                         </form>
                     </div>
@@ -185,7 +185,7 @@
 
             </div>
         </div>
-    </div>
+    </section>
 @endsection
 
 {{-- Other scripts --}}
