@@ -8,6 +8,10 @@
             h3{
                 margin-bottom: 0;
                 color: $navy-color;
+                .badge-secondary {
+                    color: $light-teal;
+                    background-color: $navy-color;
+                }
             }
         }
         // card body
