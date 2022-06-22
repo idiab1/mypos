@@ -11124,6 +11124,18 @@ a.text-dark:focus {
 
 /* End of Tables */
 
+/* Card */
+
+.section .card-categories {
+  border-top: 3px solid #161D6F;
+}
+
+.section .card-orders {
+  border-top: 3px solid #161D6F;
+}
+
+/* End of Card */
+
 /* Content header */
 
 .content-header {
