@@ -1,3 +1,3 @@
 <footer class="main-footer">
-    <strong>Copyright &copy; 2020 </a>.</strong> All rights reserved.
+    <strong>All rights reserved Copyright &copy; 2020.</strong>
 </footer>
