@@ -24,7 +24,68 @@
     width: 100%;
     font-weight: 600;
     letter-spacing: .06rem;
-
 }
-
 /* End of Login button */
+
+/* Button Group */
+.btn-group{
+    margin-bottom: .7rem;
+    .btn-secondary {
+        color: $gray;
+        background-color: rgb(22 29 111 / 61%);
+        border-color: $navy-color;
+        &:focus{
+            color: $gray;
+            box-shadow: none;
+            background-color: rgb(22 29 111 / 61%);
+        }
+    }
+}
+/* End of Button Group */
+
+/* Button edit */
+.btn-edit{
+    margin-right: 5px;
+    color: $navy-color;
+    border-color: $light-teal;
+    background-color: $light-teal;
+    &:focus{
+        box-shadow: 0;
+        color: $navy-color;
+        border-color: $light-teal;
+        background-color: $light-teal;
+    }
+    &:hover{
+        color: $navy-color;
+        border-color: $light-teal;
+        background-color: $light-teal;
+    }
+}
+/* End of Button edit */
+
+/* Button danger */
+.btn-danger{
+    margin-left: 5px;
+    color: $navy-color;
+    border-color: $red-color;
+    background-color: $red-color;
+    &:focus{
+        box-shadow: none;
+        color: $navy-color;
+        border-color: $red-color;
+        background-color: $red-color;
+    }
+    &:hover{
+        color: $navy-color;
+        border-color: $red-color;
+        background-color: $red-color;
+    }
+}
+/* End of Button danger */
+
+.btn{
+    box-shadow: none;
+    i{
+        padding-right: 5px;
+    }
+}
