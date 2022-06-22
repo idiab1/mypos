@@ -10979,6 +10979,23 @@ a.text-dark:focus {
 
 /* End of Login button */
 
+/* Tables */
+
+/* End of Tables */
+
+/* Content header */
+
+.content-header {
+  /* Breadcrumb */
+  /* End of Breadcrumb */
+}
+
+.content-header .page-heading {
+  font-weight: 600;
+}
+
+/* End of Content header */
+
 /* Main Sidebar */
 
 .main-sidebar {
