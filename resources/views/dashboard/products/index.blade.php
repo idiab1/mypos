@@ -49,9 +49,9 @@
                             <th>#</th>
                             <th>{{trans('site.name')}}</th>
                             {{-- <th>{{trans('site.category')}}</th> --}}
-                            {{-- <th>{{trans('site.description')}}</th>
-                            <th>{{trans('site.image')}}</th> --}}
-                            <th>{{trans('site.purchase_price')}}</th>
+                            {{-- <th>{{trans('site.description')}}</th> --}}
+                            <th>{{trans('site.image')}}</th>
+                            {{-- <th>{{trans('site.purchase_price')}}</th> --}}
                             <th>{{trans('site.sale_price')}}</th>
                             <th>{{trans('site.profit_percent')}}</th>
                             <th>{{trans('site.stock')}}</th>
@@ -68,11 +68,21 @@
                                     <td>{{$id++}}</td>
                                     <td>{{$product->name}}</td>
                                     {{-- <td>{{$product->category->name}}</td> --}}
-                                    {{-- <td>{{$product->description}}</td>
-                                    <td><img class="img-thumbnail" src="{{$product->image_path}}" style="width: 60px; height:60px" alt="" /></td> --}}
-                                    <td>{{$product->purchase_price}}</td>
+                                    {{-- <td>{{$product->description}}</td> --}}
+                                    <td><img class="img-thumbnail" src="{{$product->image_path}}" style="width: 60px; height:60px" alt="" /></td>
+                                    {{-- <td>{{$product->purchase_price}}</td> --}}
                                     <td>{{$product->sale_price}}</td>
-                                    <td>{{$product->profit_percent}} %</td>
+                                    <td>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-primary" role="progressbar"
+                                            style="width: {{$product->profit_percent}}%"
+                                            aria-valuenow="{{$product->profit_percent}}"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                                {{$product->profit_percent}} %
+                                            </div>
+                                        </div>
+                                        {{-- <progress id="file" max="100" value="{{$product->profit_percent}}"> {{$product->profit_percent}}% </progress> --}}
+                                    </td>
                                     <td>{{$product->stock}}</td>
                                     <td>
                                         <a class="btn btn-success d-inline-block btn-edit btn-sm" href="{{route('product.edit', ['id' => $product->id])}}">
