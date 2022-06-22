@@ -27,7 +27,7 @@
 
 {{-- Content --}}
 @section('content')
-    <div class="Categories-page">
+    <section class="Categories-page section">
         <div class="card">
             <div class="card-header">
                 <div class="row">
@@ -91,11 +91,11 @@
                         </tr>
                     </tfoot>
                 </table>
-                </div>
-                <!-- /.card-body -->
             </div>
-            <!-- /.card -->
+                <!-- /.card-body -->
         </div>
+        <!-- /.card -->
+    </section>
 @endsection
 
 @section('scripts')

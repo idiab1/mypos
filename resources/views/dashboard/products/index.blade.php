@@ -27,7 +27,7 @@
 
 {{-- Content --}}
 @section('content')
-    <div class="products-page">
+    <section class="products-page section">
         <div class="card">
             <div class="card-header">
                 <div class="row">
@@ -113,7 +113,7 @@
                 <!-- /.card-body -->
             </div>
             <!-- /.card -->
-        </div>
+        </section>
 @endsection
 
 @section('scripts')

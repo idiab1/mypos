@@ -75,7 +75,7 @@
 
 {{-- Content --}}
 @section('content')
-    <div class="orders-page">
+    <section class="orders-page section">
         <div class="row">
             <div class="col-lg-8 col-md-6 col-sm-12">
                 <div class="card">

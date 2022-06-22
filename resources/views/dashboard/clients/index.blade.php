@@ -27,7 +27,7 @@
 
 {{-- Content --}}
 @section('content')
-    <div class="clients-page">
+    <section class="clients-page section">
         <div class="card">
             <div class="card-header">
                 <div class="row">
@@ -67,7 +67,7 @@
                                     <td>{{$client->address}}</td>
                                     <!-- Add Orders -->
                                     <td>
-                                        <a class="btn btn-primary btn-sm btn-add-order"
+                                        <a class="btn btn-primary btn-crayons btn-sm btn-add-order"
                                         href="{{route('clients.orders.create', ['id' => $client->id])}}">
                                         {{trans('site.add_order')}}
                                         </a>
@@ -103,11 +103,11 @@
                         </tr>
                     </tfoot>
                 </table>
-                </div>
-                <!-- /.card-body -->
             </div>
-            <!-- /.card -->
+            <!-- /.card-body -->
         </div>
+        <!-- /.card -->
+    </section>
 @endsection
 
 @section('scripts')
