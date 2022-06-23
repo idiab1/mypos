@@ -1,5 +1,12 @@
 /* Card */
 .section{
+    // Card
+    .card{
+        .card-header,
+        .card-footer{
+            background-color: transparent;
+        }
+    }
     // card categories
     .card-categories{
         border-top: 3px solid $navy-color;
