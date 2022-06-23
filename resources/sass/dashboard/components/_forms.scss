@@ -1,0 +1,41 @@
+/* Forms */
+.card-form{
+    // Card Header
+    .card-header{
+        background-color: $navy-color !important;
+        h3{
+            color: $light-teal !important;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+    }
+    form{
+        label{
+            color: $navy-color;
+        }
+        // input{
+
+        // }
+        ::placeholder{
+            color: $navy-color;
+            font-size: .8rem;
+            letter-spacing: .065rem;
+        }
+        // textarea{
+
+        // }
+        input, textarea{
+            color: $navy-color;
+            &:focus{
+                box-shadow: none;
+                border-color: $navy-color;
+            }
+        }
+    }
+    // Card Footer
+    .card-footer{
+        border-top: none;
+    }
+}
+
+/* End of Forms */
