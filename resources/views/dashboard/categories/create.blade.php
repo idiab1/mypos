@@ -18,11 +18,11 @@
 
 {{-- Content --}}
 @section('content')
-    <div class="categories-form-page">
+    <section class="categories-form-page section">
         <div class="row">
             <div class="col-md-9 m-auto">
                 <!-- general form elements -->
-                <div class="card card-primary">
+                <div class="card card-form">
 
                     <div class="card-header">
                         <h3 class="card-title">{{trans('site.create_new_category')}}</h3>
@@ -49,7 +49,9 @@
                         </div>
                     <!-- /.card-body -->
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary"> <i class="fas fa-plus"></i> {{ trans('site.add') }}</button>
+                        <button type="submit" class="btn btn-primary btn-crayons">
+                            <i class="fas fa-plus"></i> {{ trans('site.add') }}
+                        </button>
                     </div>
                 </form>
 
@@ -57,5 +59,5 @@
                 <!-- /.card -->
             </div>
         </div>
-    </div>
+    </secti>
 @endsection

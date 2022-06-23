@@ -31,11 +31,11 @@
 
 {{-- Content --}}
 @section('content')
-    <div class="products-form-page">
+    <section class="products-form-page section">
         <div class="row">
             <div class="col-md-9 m-auto">
                 <!-- general form elements -->
-                <div class="card card-primary">
+                <div class="card card-form">
 
                     <div class="card-header">
                         <h3 class="card-title">{{trans('site.edit')}} {{$product->name . "'s"}}</h3>
@@ -101,7 +101,7 @@
                                 <input class="form-control" type="number" id="sale_price" name="sale_price" placeholder="{{trans('site.type_sale_price')}}" value="{{$product->sale_price}}" required>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group mb-0">
                                 <label for="stock">{{ trans('site.stock') }}</label>
                                 <input class="form-control" type="number" id="stock" name="stock" placeholder="{{trans('site.type_stock')}}" value="{{$product->stock}}" required>
                             </div>
@@ -109,7 +109,9 @@
                         </div>
                     <!-- /.card-body -->
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">{{ trans('site.edit') }}</button>
+                        <button type="submit" class="btn btn-primary btn-crayons">
+                            {{ trans('site.edit') }}
+                        </button>
                     </div>
                 </form>
 
@@ -117,7 +119,7 @@
                 <!-- /.card -->
             </div>
         </div>
-    </div>
+    </section>
 @endsection
 
 {{-- Scripts --}}

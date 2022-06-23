@@ -18,11 +18,11 @@
 
 {{-- Content --}}
 @section('content')
-    <div class="categories-form-page">
+    <section class="categories-form-page section">
         <div class="row">
             <div class="col-md-9 m-auto">
                 <!-- general form elements -->
-                <div class="card card-primary">
+                <div class="card card-form">
 
                     <div class="card-header">
                         <h3 class="card-title">{{trans('site.edit')}} {{$category->name."'s" }}</h3>
@@ -58,7 +58,9 @@
 
                     <!-- /.card-body -->
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">{{trans('site.edit')}}</button>
+                        <button type="submit" class="btn btn-primary btn-crayons">
+                            {{trans('site.edit')}}
+                        </button>
                     </div>
                 </form>
 
@@ -66,5 +68,5 @@
                 <!-- /.card -->
             </div>
         </div>
-    </div>
+    </section>
 @endsection
