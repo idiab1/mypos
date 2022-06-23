@@ -81,6 +81,7 @@ return [
     'added'             => "Added",
     'price'             => "Price",
     'show'              => "Show",
+    "currency"          => "EGP",
 
     'ar' => [
         'name'          => 'Arabic Name',
