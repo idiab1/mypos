@@ -22,8 +22,9 @@ class OrderController extends Controller
     public function create($id)
     {
         $categories = Category::all();
+        $products = Product::all();
         $client = Client::find($id);
-        return view("dashboard.clients.orders.create", compact("categories", "client"));
+        return view("dashboard.clients.orders.create", compact("categories", "products", "client"));
     }
 
     /**
