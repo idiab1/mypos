@@ -11126,6 +11126,11 @@ a.text-dark:focus {
 
 /* Card */
 
+.section .card .card-header,
+.section .card .card-footer {
+  background-color: transparent;
+}
+
 .section .card-categories {
   border-top: 3px solid #161D6F;
 }
@@ -11135,6 +11140,57 @@ a.text-dark:focus {
 }
 
 /* End of Card */
+
+/* Forms */
+
+.card-form .card-header {
+  background-color: #161D6F !important;
+}
+
+.card-form .card-header h3 {
+  color: #98DED9 !important;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.card-form form label {
+  color: #161D6F;
+}
+
+.card-form form ::-moz-placeholder {
+  color: #161D6F;
+  font-size: 0.8rem;
+  letter-spacing: 0.065rem;
+}
+
+.card-form form :-ms-input-placeholder {
+  color: #161D6F;
+  font-size: 0.8rem;
+  letter-spacing: 0.065rem;
+}
+
+.card-form form ::placeholder {
+  color: #161D6F;
+  font-size: 0.8rem;
+  letter-spacing: 0.065rem;
+}
+
+.card-form form input,
+.card-form form textarea {
+  color: #161D6F;
+}
+
+.card-form form input:focus,
+.card-form form textarea:focus {
+  box-shadow: none;
+  border-color: #161D6F;
+}
+
+.card-form .card-footer {
+  border-top: none;
+}
+
+/* End of Forms */
 
 /* Content header */
 
@@ -11170,6 +11226,11 @@ a.text-dark:focus {
 .main-sidebar {
   background-color: #98DED9;
   box-shadow: 2px 0px 5px 0 rgba(0, 0, 0, 0.25);
+  width: 200px;
+}
+
+.main-sidebar::before {
+  width: 200px;
 }
 
 .main-sidebar .brand-link {
@@ -11225,6 +11286,13 @@ a.text-dark:focus {
 
 /* End of Main Sidebar */
 
+@media (min-width: 992px) {
+  .sidebar-mini.sidebar-collapse .main-sidebar.sidebar-focused,
+  .sidebar-mini.sidebar-collapse .main-sidebar:hover {
+    width: 200px;
+  }
+}
+
 /* Navbar */
 
 .navbar .navbar-nav .nav-item .nav-link {
@@ -11251,6 +11319,19 @@ a.text-dark:focus {
 }
 
 /* End of Navbar */
+
+.content-wrapper {
+  background-color: #fcfcfc;
+}
+
+@media (min-width: 768px) {
+  body:not(.sidebar-mini-md) .content-wrapper,
+  body:not(.sidebar-mini-md) .main-footer,
+  body:not(.sidebar-mini-md) .main-header {
+    transition: margin-left 0.3s ease-in-out;
+    margin-left: 200px;
+  }
+}
 
 .sign-page {
   height: 100vh;
