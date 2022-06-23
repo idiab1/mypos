@@ -45,14 +45,16 @@
                                 <label for="other_phone">{{trans('site.other_phone')}}</label>
                                 <input class="form-control" type="number" id="other_phone" name="phone[]" value="{{$client->phone[1]}}" placeholder="{{trans('site.type_other_phone')}}">
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mb-0">
                                 <label for="address">{{trans('site.address')}}</label>
                                 <input class="form-control address" type="text" name="address" id="address" value="{{$client->address}}" placeholder="{{trans('site.type_address')}}" required>
                             </div>
                         </div>
                     <!-- /.card-body -->
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">{{trans('site.edit')}}</button>
+                        <button type="submit" class="btn btn-primary btn-crayons">
+                            {{trans('site.edit')}}
+                        </button>
                     </div>
                 </form>
 
