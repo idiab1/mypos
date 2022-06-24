@@ -11071,12 +11071,8 @@ a.text-dark:focus {
 
 /* End of Button danger */
 
-.btn {
+.btn:focus {
   box-shadow: none;
-}
-
-.btn i {
-  padding-right: 5px;
 }
 
 /* Tables */
@@ -11137,6 +11133,10 @@ a.text-dark:focus {
 
 .section .card-orders {
   border-top: 3px solid #161D6F;
+}
+
+.section .card-orders .card-header h3 {
+  font-weight: 700;
 }
 
 /* End of Card */
@@ -11390,4 +11390,37 @@ a.text-dark:focus {
   border-color: #98DED9;
   box-shadow: none;
 }
+
+/* Add order page */
+
+.client-orders .products-container .card-product .card-header {
+  width: 100%;
+  height: 180px;
+}
+
+.client-orders .products-container .card-product .card-header img {
+  width: 100%;
+  height: 100%;
+}
+
+.client-orders .products-container .card-product .card-body .product-info h4 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #161D6F;
+  margin-bottom: 0.3rem;
+}
+
+.client-orders .products-container .card-product .card-body .product-info span {
+  color: #585858;
+}
+
+.client-orders .products-container .card-product .card-footer {
+  border-top: none;
+}
+
+.client-orders .orders {
+  background-color: #fff;
+}
+
+/* End of Add order page */
 
