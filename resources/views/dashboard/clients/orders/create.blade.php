@@ -18,9 +18,156 @@
 
 {{-- Content --}}
 @section('content')
-    <section class="clients-form-page section">
+    <section class="clients-form-page client-orders section">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-6 col-md-7">
+                <!-- Product Container -->
+                <div class="products-container">
+                    <!-- Products head -->
+                    <div class="products-head">
+
+                    </div>
+                    <!-- ./ Products head -->
+                    <div class="row">
+                        @if ($products->count() > 0)
+                            @foreach ($products as $product)
+
+                                <div class="col-md-6">
+                                    <!-- Card Product -->
+                                    <div class="card card-product">
+                                        <!-- Card header -->
+                                        <div class="card-header p-0">
+                                            <img class="img-fluid" src="{{$product->image_path}}" alt="">
+                                        </div>
+                                        <!-- ./ Card Header -->
+                                        <!-- Card body -->
+                                        <div class="card-body text-center px-2 pt-3 pb-0">
+                                            <!-- Product info -->
+                                            <div class="product-info">
+                                                <h4>{{$product->name}}</h4>
+                                                <span>{{$product->sale_price}} {{ trans('site.currency') }}</span>
+                                            </div>
+                                        </div>
+                                        <!-- ./ Card body -->
+
+                                        <!-- Card footer -->
+                                        <div class="card-footer text-center">
+                                            <a class="btn btn-sm btn-primary btn-crayons btn-product-add product-{{$product->id}}" href="#"
+                                                id="product-{{$product->id}}" data-id="{{$product->id}}"
+                                                data-name="{{$product->name}}" data-price="{{$product->sale_price}}" >
+                                                    <i class="fas fa-shopping-cart"></i>
+                                            </a>
+                                        </div>
+                                        <!-- ./ Card footer -->
+                                    </div>
+                                    <!-- ./ Card Product -->
+                                </div>
+                            @endforeach
+                        @endif
+                    </div>
+                </div>
+                <!-- ./ Product Container -->
+
+            </div>
+            {{-- <div class="col-6 col-md-4">
+                <!-- Orders -->
+                <div class="orders">
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- Card -->
+                            <div class="card">
+                                <!-- Card Hedaer -->
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                        {{trans('site.orders')}}
+                                    </h3>
+                                </div>
+                                <!-- ./ Card Hedaer -->
+
+                                <form action="{{route("clients.orders.store", ['id' => $client->id])}}" method="POST">
+                                    @csrf
+                                    @method("POST")
+                                    <!-- Card Body -->
+                                    <div class="card-body">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>Quantity</th>
+                                                    <th>Price</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="order-list">
+
+                                            </tbody>
+                                        </table>
+
+                                        <!-- Card footer -->
+                                        <div class="card-footer">
+                                            <!-- Total Price -->
+                                            <div class="total-price">
+                                                <p class="d-inline-block font-weight-bold">Total Price</p> &colon; <span class="total">00</span>
+                                            </div>
+                                            <button class="btn btn-primary disabled btn-crayons btn-add-order"
+                                                type="submit">
+                                                Add Order
+                                            </button>
+                                        </div>
+                                        <!-- ./ Card footer -->
+
+                                    </div>
+                                    <!-- ./ card Body -->
+                                </form>
+                            </div>
+                            <!-- ./ Card -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ./ Orders -->
+            </div> --}}
+            <div class="col-6 col-md-5">
+                <div class="card card-orders">
+                    <div class="card-header">
+                        <h3 class="card-title">{{trans('site.orders')}}</h3>
+                    </div>
+                    <form action="{{route("clients.orders.store", ['id' => $client->id])}}" method="POST">
+                        @csrf
+                        @method("POST")
+                        <div class="card-body p-0">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Quantity</th>
+                                        <th>Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="order-list">
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                        <!-- Card footer -->
+                        <div class="card-footer">
+                            <!-- Total Price -->
+                            <div class="total-price">
+                                <p class="d-inline-block font-weight-bold">Total Price</p> &colon; <span class="total">00</span>
+                            </div>
+                            <button class="btn btn-crayons btn-add-order disabled"
+                                type="submit">
+                                Add Order
+                            </button>
+                        </div>
+                        <!-- ./ Card footer -->
+                    </form>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            {{-- <div class="col-md-6">
                 <div class="card card-categories">
                     <div class="card-header">
                         <h3 class="card-title">{{trans('site.categories')}}</h3>
@@ -94,9 +241,9 @@
                     </div>
 
                 </div>
-            </div>
+            </div> --}}
 
-            <div class="col-md-6">
+            {{-- <div class="col-md-6">
                 <div class="card card-orders">
                     <div class="card-header">
                         <h3 class="card-title">{{trans('site.orders')}}</h3>
@@ -120,70 +267,17 @@
                             <div class="total-price">
                                 <p class="d-inline-block font-weight-bold">Total Price</p> &colon; <span class="total">00</span>
                             </div>
-                            <button class="btn btn-primary disabled btn-crayons btn-add-order" type="submit">Add Order</button>
+                            <button class="btn btn-primary disabled btn-crayons btn-add-order"
+                                type="submit">
+                                Add Order
+                            </button>
 
                         </form>
                     </div>
                     <!-- /.card-body -->
                 </div>
 
-                <!-- Previous Order -->
-                {{-- <div class="card card-previous-orders card-outline card-primary">
-                    <div class="card-header">
-                        <h3 class="card-title">{{trans('site.previous_orders')}}</h3>
-                    </div>
-                    <div class="card-body">
-                        <div class="accordion" id="accordionExample">
-                            <div class="card">
-                                <div class="card-header" id="headingOne">
-                                    <h5 class="mb-0">
-                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                            Collapsible Group Item #1
-                                        </button>
-                                    </h5>
-                                </div>
-
-                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header" id="headingTwo">
-                                    <h5 class="mb-0">
-                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                            Collapsible Group Item #2
-                                        </button>
-                                    </h5>
-                                </div>
-                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header" id="headingThree">
-                                    <h5 class="mb-0">
-                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                            Collapsible Group Item #3
-                                        </button>
-                                    </h5>
-                                </div>
-                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
-
-
-
-            </div>
+            </div> --}}
         </div>
     </section>
 @endsection
