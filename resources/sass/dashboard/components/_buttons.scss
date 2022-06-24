@@ -104,8 +104,7 @@
 /* End of Button danger */
 
 .btn{
-    box-shadow: none;
-    i{
-        padding-right: 5px;
+    &:focus{
+        box-shadow: none;
     }
 }
