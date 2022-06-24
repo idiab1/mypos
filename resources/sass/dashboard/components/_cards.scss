@@ -16,6 +16,11 @@
     // card orders
     .card-orders{
         border-top: 3px solid $navy-color;
+        .card-header{
+            h3{
+                font-weight: 700;
+            }
+        }
     }
 }
 /* End of Card */
