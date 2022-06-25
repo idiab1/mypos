@@ -11225,7 +11225,7 @@ a.text-dark:focus {
 
 .main-sidebar {
   background-color: #98DED9;
-  box-shadow: 2px 0px 5px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 2px 0px 5px 0 rgba(0, 0, 0, 0.25) !important;
   width: 200px;
 }
 
@@ -11277,6 +11277,8 @@ a.text-dark:focus {
 
 .main-sidebar .nav-sidebar .nav-item .nav-link {
   color: #161D6F;
+  -mox-transition: all 0.26s ease-in-out;
+  transition: all 0.26s ease-in-out;
 }
 
 .main-sidebar .nav-sidebar .nav-item .nav-link:hover {

@@ -1,7 +1,7 @@
 /* Main Sidebar */
 .main-sidebar{
     background-color: $light-teal;
-    box-shadow: 2px 0px 5px 0 rgb(0 0 0 / 25%);
+    box-shadow: 2px 0px 5px 0 rgb(0 0 0 / 25%) !important;
     width: 200px;
     &::before{
         width: 200px;
@@ -55,6 +55,7 @@
         .nav-item{
             .nav-link{
                 color: $navy-color;
+                @include prefixer(transition, all .26s ease-in-out, webkit mox ms o);
                 &:hover{
                     color: $navy-color;
                     background-color: rgb(255 255 255 / 37%);
