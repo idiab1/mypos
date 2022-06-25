@@ -100,6 +100,12 @@ Route::group(
 
             Route::get("/orders/{order}/products", "OrderController@products")->name("order.products");
 
+
+            Route::get('stripe', 'StripeController@index')->name("payment.stripe");
+            Route::post('store', 'StripeController@store')->name("payment.stripe.store");
+
+
+
         }); // End of dashboard routes
 
 
