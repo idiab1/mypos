@@ -11322,6 +11322,20 @@ a.text-dark:focus {
 
 /* End of Navbar */
 
+/* Empty section */
+
+.empty-section img {
+  width: 300px;
+}
+
+.empty-section p {
+  font-size: 1.02rem;
+  margin: 1rem 0;
+  font-weight: 500;
+}
+
+/* End of Empty section */
+
 .content-wrapper {
   background-color: #fcfcfc;
 }
