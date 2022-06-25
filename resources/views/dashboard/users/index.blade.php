@@ -29,69 +29,84 @@
 {{-- Content --}}
 @section('content')
     <section class="users-page section">
-        <div class="card">
-            <div class="card-header">
-                <div class="row">
-                    <div class="col-sm-8">
-                        <h3 class="card-title">List of All Users</h3>
-                    </div>
-                    <div class="col-sm-4">
-                        <a class="btn btn-primary btn-crayons btn-add-new float-right" href="{{route('user.create')}}">
-                            <i class="fas fa-plus"></i> Add New User
-                        </a>
+        @if ($users->count() > 0)
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <h3 class="card-title">List of All Users</h3>
+                        </div>
+                        <div class="col-sm-4">
+                            <a class="btn btn-primary btn-crayons btn-add-new float-right" href="{{route('user.create')}}">
+                                <i class="fas fa-plus"></i> Add New User
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- /.card-header -->
-            <div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
-                    <thead>
-                        <tr>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Email</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($users as $user)
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
                             <tr>
-                                <td>{{$user->first_name}}</td>
-                                <td>{{$user->last_name}}</td>
-                                <td>{{$user->email}}</td>
-                                <td>
-                                    <a class="btn btn-success d-inline-block btn-sm btn-edit" href="{{route('user.edit', ['id' => $user->id])}}">
-                                        <i class="fas fa-edit"></i>
-                                        Edit
-                                    </a>
-                                    <form class="d-inline-block" action="{{route('user.destroy', ['id' => $user->id])}}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button class="btn btn-danger btn-sm btn-delete" type="submit">
-                                            <i class="fas fa-trash"></i>
-                                            Delete
-                                        </button>
-                                    </form>
-                                </td>
-
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Email</th>
+                                <th>Action</th>
                             </tr>
-                        @endforeach
+                        </thead>
+                        <tbody>
+                            @foreach ($users as $user)
+                                <tr>
+                                    <td>{{$user->first_name}}</td>
+                                    <td>{{$user->last_name}}</td>
+                                    <td>{{$user->email}}</td>
+                                    <td>
+                                        <a class="btn btn-success d-inline-block btn-sm btn-edit" href="{{route('user.edit', ['id' => $user->id])}}">
+                                            <i class="fas fa-edit"></i>
+                                            Edit
+                                        </a>
+                                        <form class="d-inline-block" action="{{route('user.destroy', ['id' => $user->id])}}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn btn-danger btn-sm btn-delete" type="submit">
+                                                <i class="fas fa-trash"></i>
+                                                Delete
+                                            </button>
+                                        </form>
+                                    </td>
 
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Email</th>
-                            <th>Action</th>
-                        </tr>
-                    </tfoot>
-                </table>
+                                </tr>
+                            @endforeach
+
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Email</th>
+                                <th>Action</th>
+                            </tr>
+                        </tfoot>
+                    </table>
                 </div>
                 <!-- /.card-body -->
             </div>
             <!-- /.card -->
-        </section>
+        @else
+            <div class="row">
+                <div class="col-12 m-auto">
+                    <div class="empty-section text-center">
+                        <img class="img-fluid" src="{{asset("images/not_data.svg")}}" alt="">
+                        <p>No data available in table</p>
+                        <a class="btn btn-primary btn-crayons btn-add-new" href="{{route('user.create')}}">
+                            <i class="fas fa-plus"></i> {{trans('site.add_new_client')}}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        @endif
+
+    </section>
 @endsection
 
 @section('scripts')

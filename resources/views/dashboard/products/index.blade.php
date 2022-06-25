@@ -28,41 +28,41 @@
 {{-- Content --}}
 @section('content')
     <section class="products-page section">
-        <div class="card">
-            <div class="card-header">
-                <div class="row">
-                    <div class="col-sm-8">
-                        <h3 class="card-title">{{trans('site.all_list_products')}}</h3>
-                    </div>
-                    <div class="col-sm-4">
-                        <a class="btn btn-primary btn-crayons btn-add-new float-right" href="{{route('product.create')}}">
-                            <i class="fas fa-plus"></i> {{trans('site.add_new_product')}}
-                        </a>
+        @if ($products->count() > 0)
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <h3 class="card-title">{{trans('site.all_list_products')}}</h3>
+                        </div>
+                        <div class="col-sm-4">
+                            <a class="btn btn-primary btn-crayons btn-add-new float-right" href="{{route('product.create')}}">
+                                <i class="fas fa-plus"></i> {{trans('site.add_new_product')}}
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- /.card-header -->
-            <div class="card-body table-responsive">
-                <table id="example1" class="table table-bordered ">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>{{trans('site.name')}}</th>
-                            {{-- <th>{{trans('site.category')}}</th> --}}
-                            {{-- <th>{{trans('site.description')}}</th> --}}
-                            <th>{{trans('site.image')}}</th>
-                            {{-- <th>{{trans('site.purchase_price')}}</th> --}}
-                            <th>{{trans('site.sale_price')}}</th>
-                            <th>{{trans('site.profit_percent')}}</th>
-                            <th>{{trans('site.stock')}}</th>
-                            <th>{{trans('site.action')}}</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @php
-                            $id = 1;
-                        @endphp
-                        @if ($products->count() > 0)
+                <!-- /.card-header -->
+                <div class="card-body table-responsive">
+                    <table id="example1" class="table table-bordered ">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>{{trans('site.name')}}</th>
+                                {{-- <th>{{trans('site.category')}}</th> --}}
+                                {{-- <th>{{trans('site.description')}}</th> --}}
+                                <th>{{trans('site.image')}}</th>
+                                {{-- <th>{{trans('site.purchase_price')}}</th> --}}
+                                <th>{{trans('site.sale_price')}}</th>
+                                <th>{{trans('site.profit_percent')}}</th>
+                                <th>{{trans('site.stock')}}</th>
+                                <th>{{trans('site.action')}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @php
+                                $id = 1;
+                            @endphp
                             @foreach ($products as $product)
                                 <tr>
                                     <td>{{$id++}}</td>
@@ -101,29 +101,41 @@
 
                                 </tr>
                             @endforeach
-                        @endif
 
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <th>#</th>
-                            <th>{{trans('site.name')}}</th>
-                            {{-- <th>{{trans('site.category')}}</th> --}}
-                            {{-- <th>{{trans('site.description')}}</th>
-                            <th>{{trans('site.image')}}</th> --}}
-                            <th>{{trans('site.purchase_price')}}</th>
-                            <th>{{trans('site.sale_price')}}</th>
-                            <th>{{trans('site.profit_percent')}}</th>
-                            <th>{{trans('site.stock')}}</th>
-                            <th>{{trans('site.action')}}</th>
-                        </tr>
-                    </tfoot>
-                </table>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>#</th>
+                                <th>{{trans('site.name')}}</th>
+                                {{-- <th>{{trans('site.category')}}</th> --}}
+                                {{-- <th>{{trans('site.description')}}</th>
+                                <th>{{trans('site.image')}}</th> --}}
+                                <th>{{trans('site.purchase_price')}}</th>
+                                <th>{{trans('site.sale_price')}}</th>
+                                <th>{{trans('site.profit_percent')}}</th>
+                                <th>{{trans('site.stock')}}</th>
+                                <th>{{trans('site.action')}}</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    </div>
+                    <!-- /.card-body -->
                 </div>
-                <!-- /.card-body -->
+                <!-- /.card -->
+            </section>
+        @else
+            <div class="row">
+                <div class="col-12 m-auto">
+                    <div class="empty-section text-center">
+                        <img class="img-fluid" src="{{asset("images/not_data.svg")}}" alt="">
+                        <p>No data available in table</p>
+                        <a class="btn btn-primary btn-crayons btn-add-new" href="{{route('product.create')}}">
+                            <i class="fas fa-plus"></i> {{trans('site.add_new_client')}}
+                        </a>
+                    </div>
+                </div>
             </div>
-            <!-- /.card -->
-        </section>
+        @endif
 @endsection
 
 @section('scripts')

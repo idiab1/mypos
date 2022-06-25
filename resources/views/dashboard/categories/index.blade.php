@@ -28,35 +28,35 @@
 {{-- Content --}}
 @section('content')
     <section class="Categories-page section">
-        <div class="card">
-            <div class="card-header">
-                <div class="row">
-                    <div class="col-sm-8">
-                        <h3 class="card-title">{{trans('site.all_list_categories')}}</h3>
-                    </div>
-                    <div class="col-sm-4">
-                        <a class="btn btn-primary btn-crayons btn-add-new float-right" href="{{route('category.create')}}">
-                            <i class="fas fa-plus"></i> {{trans('site.add_new_category')}}
-                        </a>
+        @if ($categories->count() > 0)
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <h3 class="card-title">{{trans('site.all_list_categories')}}</h3>
+                        </div>
+                        <div class="col-sm-4">
+                            <a class="btn btn-primary btn-crayons btn-add-new float-right" href="{{route('category.create')}}">
+                                <i class="fas fa-plus"></i> {{trans('site.add_new_category')}}
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- /.card-header -->
-            <div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>{{trans('site.name')}}</th>
-                            <th>{{trans('site.product_count')}}</th>
-                            <th>{{trans('site.action')}}</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @php
-                            $id = 1;
-                        @endphp
-                        @if ($categories->count() > 0)
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>{{trans('site.name')}}</th>
+                                <th>{{trans('site.product_count')}}</th>
+                                <th>{{trans('site.action')}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @php
+                                $id = 1;
+                            @endphp
                             @foreach ($categories as $category)
                                 <tr>
                                     <td>{{$id++}}</td>
@@ -79,22 +79,33 @@
 
                                 </tr>
                             @endforeach
-                        @endif
-
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <th>#</th>
-                            <th>{{trans('site.name')}}</th>
-                            <th>{{trans('site.product_count')}}</th>
-                            <th>{{trans('site.action')}}</th>
-                        </tr>
-                    </tfoot>
-                </table>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>#</th>
+                                <th>{{trans('site.name')}}</th>
+                                <th>{{trans('site.product_count')}}</th>
+                                <th>{{trans('site.action')}}</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                    <!-- /.card-body -->
             </div>
-                <!-- /.card-body -->
-        </div>
-        <!-- /.card -->
+            <!-- /.card -->
+        @else
+            <div class="row">
+                <div class="col-12 m-auto">
+                    <div class="empty-section text-center">
+                        <img class="img-fluid" src="{{asset("images/not_data.svg")}}" alt="">
+                        <p>No data available in table</p>
+                        <a class="btn btn-primary btn-crayons btn-add-new" href="{{route('category.create')}}">
+                            <i class="fas fa-plus"></i> {{trans('site.add_new_client')}}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        @endif
     </section>
 @endsection
 

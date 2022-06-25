@@ -76,27 +76,26 @@
 {{-- Content --}}
 @section('content')
     <section class="orders-page section">
-        <div class="row">
-            <div class="col-lg-8 col-md-6 col-sm-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">{{trans('site.orders')}}
-                            <span class="badge badge-secondary">{{$orders->count()}}</span>
-                        </h3>
-                    </div> <!-- ./card header -->
-                    <div class="card-body">
-                        <table id="example1" class="table table-bordered table-striped">
-                            <thead>
-                                <tr>
-                                    <th>{{trans('site.name_client')}}</th>
-                                    <th>{{trans('site.price')}}</th>
-                                    <th>{{trans('site.added')}}</th>
-                                    <th>{{trans('site.action')}}</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                                @if ($orders->count() > 0)
+        @if ($orders->count() > 0)
+            <div class="row">
+                <div class="col-lg-8 col-md-6 col-sm-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">{{trans('site.orders')}}
+                                <span class="badge badge-secondary">{{$orders->count()}}</span>
+                            </h3>
+                        </div> <!-- ./card header -->
+                        <div class="card-body">
+                            <table id="example1" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>{{trans('site.name_client')}}</th>
+                                        <th>{{trans('site.price')}}</th>
+                                        <th>{{trans('site.added')}}</th>
+                                        <th>{{trans('site.action')}}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
                                     @foreach ($orders as $order)
                                         <tr>
                                             <td>{{$order->client->name}}</td>
@@ -126,42 +125,51 @@
 
                                         </tr>
                                     @endforeach
-                                @endif
-
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <th>{{trans('site.name_client')}}</th>
-                                    <th>{{trans('site.price')}}</th>
-                                    <th>{{trans('site.added')}}</th>
-                                    <th>{{trans('site.action')}}</th>
-                                </tr>
-                            </tfoot>
-                        </table>
-                    </div> <!-- ./card body -->
-                </div> <!-- ./card -->
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">{{trans('site.show_orders')}}</h3>
-                    </div> <!-- ./card header -->
-                    <div class="card-body">
-                        <div class="loading text-center">
-                            <div class="loader"></div>
-                            <p class="p-2">{{trans('site.waiting')}}</p>
-                        </div>
-                        <div class="product-order-list">
-
-                        </div> <!-- /.end of product order list-->
-
-
-                    </div> <!-- ./card body -->
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>{{trans('site.name_client')}}</th>
+                                        <th>{{trans('site.price')}}</th>
+                                        <th>{{trans('site.added')}}</th>
+                                        <th>{{trans('site.action')}}</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div> <!-- ./card body -->
+                    </div> <!-- ./card -->
                 </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
 
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">{{trans('site.show_orders')}}</h3>
+                        </div> <!-- ./card header -->
+                        <div class="card-body">
+                            <div class="loading text-center">
+                                <div class="loader"></div>
+                                <p class="p-2">{{trans('site.waiting')}}</p>
+                            </div>
+                            <div class="product-order-list">
+
+                            </div> <!-- /.end of product order list-->
+
+
+                        </div> <!-- ./card body -->
+                    </div>
+
+                </div>
             </div>
-        </div>
+        @else
+            <div class="row">
+                <div class="col-12 m-auto">
+                    <div class="empty-section text-center">
+                        <img class="img-fluid" src="{{asset("images/not_data.svg")}}" alt="">
+                        <p>No data available in table</p>
+                    </div>
+                </div>
+            </div>
+        @endif
+
 
 @endsection
 
