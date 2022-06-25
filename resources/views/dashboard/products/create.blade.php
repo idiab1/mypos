@@ -9,6 +9,31 @@
         .select2-container .select2-selection--single {
             height: auto;
         }
+        .select2-container--default .select2-dropdown .select2-search__field:focus, .select2-container--default .select2-search--inline .select2-search__field:focus {
+            outline: 0;
+            border: 1px solid #161D6F;
+        }
+        .select2-container--default.select2-container--open .select2-selection--single {
+            border-color: #161D6F;
+        }
+        .select2-container--default.select2-container--focus .select2-selection--multiple,
+        .select2-container--default.select2-container--focus .select2-selection--single {
+            border-color: #161D6F;
+        }
+        .select2-container--default .select2-selection--single .select2-selection__rendered {
+            color: #161D6F;
+        }
+        .select2-container--default .select2-results__option[aria-selected=true] {
+            background-color: #f0f0f0;
+        }
+        .select2-container--default .select2-results__option--highlighted[aria-selected] {
+            color: #fff;
+            background-color: #161D6F;
+        }
+        .select2-container--default .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
+            background-color: #161D6F;
+            color: #fff;
+        }
 
     </style>
 @endsection
@@ -46,6 +71,7 @@
                         @csrf
                         <div class="card-body">
 
+                            <!-- Categories -->
                             <div class="form-group">
                                 <label for="categories">{{ trans('site.categories') }}</label>
                                 <select class="form-control select2 searchable" name="category_id" id="categories">
@@ -78,7 +104,7 @@
 
                             @endforeach
 
-
+                            <!-- Image -->
                             <div class="form-group">
                                 <label for="image">{{ trans('site.image') }}</label>
                                 <input class="form-control image" type="file" id="image" name="image" required>
@@ -86,25 +112,35 @@
                             <div class="form-group">
                                 <img class="img-thumbnail image-preview" src="{{asset('uploads/products/default.png')}}" style="width: 100px" alt="">
                             </div>
-                            <div class="form-group">
-                                <label for="purchase_price">{{ trans('site.purchase_price') }}</label>
-                                <input class="form-control" type="number" id="purchase_price" name="purchase_price" placeholder="{{trans('site.type_purchase_price')}}" required>
-                            </div>
 
-                            <div class="form-group">
-                                <label for="sale_price">{{ trans('site.sale_price') }}</label>
-                                <input class="form-control" type="number" id="sale_price" name="sale_price" placeholder="{{trans('site.type_sale_price')}}" required>
-                            </div>
-
-                            <div class="form-group mb-0">
-                                <label for="stock">{{ trans('site.stock') }}</label>
-                                <input class="form-control" type="number" id="stock" name="stock" placeholder="{{trans('site.type_stock')}}" required>
+                            <div class="row">
+                                <div class="col">
+                                    <!-- Purchase Price -->
+                                    <div class="form-group">
+                                        <label for="purchase_price">{{ trans('site.purchase_price') }}</label>
+                                        <input class="form-control" type="number" id="purchase_price" name="purchase_price" placeholder="{{trans('site.type_purchase_price')}}" required>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <!-- Sale Price -->
+                                    <div class="form-group">
+                                        <label for="sale_price">{{ trans('site.sale_price') }}</label>
+                                        <input class="form-control" type="number" id="sale_price" name="sale_price" placeholder="{{trans('site.type_sale_price')}}" required>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <!-- Stock -->
+                                    <div class="form-group mb-0">
+                                        <label for="stock">{{ trans('site.stock') }}</label>
+                                        <input class="form-control" type="number" id="stock" name="stock" placeholder="{{trans('site.type_stock')}}" required>
+                                    </div>
+                                </div>
                             </div>
 
                         </div>
                     <!-- /.card-body -->
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary btn-crayons">
+                        <button type="submit" class="btn btn-crayons">
                             <i class="fas fa-plus"></i> {{ trans('site.add') }}
                         </button>
                     </div>

@@ -21,9 +21,9 @@
             font-size: .8rem;
             letter-spacing: .065rem;
         }
-        // textarea{
-
-        // }
+        textarea{
+            // height: 150px;
+        }
         input, textarea{
             color: $navy-color;
             &:focus{
@@ -39,3 +39,4 @@
 }
 
 /* End of Forms */
+
