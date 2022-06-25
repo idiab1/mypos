@@ -130,7 +130,7 @@
                         <img class="img-fluid" src="{{asset("images/not_data.svg")}}" alt="">
                         <p>No data available in table</p>
                         <a class="btn btn-primary btn-crayons btn-add-new" href="{{route('product.create')}}">
-                            <i class="fas fa-plus"></i> {{trans('site.add_new_client')}}
+                            <i class="fas fa-plus"></i> {{trans('site.add_new_product')}}
                         </a>
                     </div>
                 </div>

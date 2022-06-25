@@ -99,7 +99,7 @@
                         <img class="img-fluid" src="{{asset("images/not_data.svg")}}" alt="">
                         <p>No data available in table</p>
                         <a class="btn btn-primary btn-crayons btn-add-new" href="{{route('user.create')}}">
-                            <i class="fas fa-plus"></i> {{trans('site.add_new_client')}}
+                            <i class="fas fa-plus"></i> {{trans('site.add_new_user')}}
                         </a>
                     </div>
                 </div>
